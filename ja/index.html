@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>開拓号：フロンティア線へ向かう都市間高速鉄道</title>
+    <meta name="theme-color" content="#0B0F13" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <link rel="alternate icon" type="image/png" href="/favicon.png?v=2" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+    <link rel="canonical" href="https://pioneer.rogerluo.org/ja/" />
+    <link rel="alternate" hreflang="en" href="https://pioneer.rogerluo.org/" />
+    <link rel="alternate" hreflang="zh-Hans" href="https://pioneer.rogerluo.org/zh-hans/" />
+    <link rel="alternate" hreflang="zh-Hant" href="https://pioneer.rogerluo.org/zh-hant/" />
+    <link rel="alternate" hreflang="ja" href="https://pioneer.rogerluo.org/ja/" />
+    <link rel="alternate" hreflang="x-default" href="https://pioneer.rogerluo.org/" />
+    <meta name="description" content="開拓号は都市の都市間高速鉄道。中央駅から、フロンティア線の三つの都市を経て、地図の外の大地を測ります。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pioneer.rogerluo.org/ja/" />
+    <meta property="og:title" content="開拓号：フロンティア線へ向かう都市間高速鉄道" />
+    <meta property="og:description" content="中央駅から、フロンティア線の三つの都市を経て、地図の外の大地を測ります。" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:image" content="https://pioneer.rogerluo.org/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="開拓号：遠くへ、速く。" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://pioneer.rogerluo.org/og.png" />
+    <meta name="twitter:title" content="開拓号：フロンティア線へ向かう都市間高速鉄道" />
+    <meta name="twitter:description" content="中央駅から、フロンティア線の三つの都市を経て、地図の外の大地を測ります。" />
+    <script type="module" crossorigin src="/assets/style-L8n4z4N2.js"></script>
+    <script type="module" crossorigin src="/assets/main-Dw4WZ8HX.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/style-DtkXrFLc.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">本文へ</a>
+
+    <header class="masthead">
+      <div class="wrap masthead-inner">
+        <a class="brand" href="/" aria-label="開拓号、ホーム">
+          <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M2 17 C 4 11.5 7 8.5 11 8.5 H22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span class="brand-name">開拓号</span>
+          <span class="brand-sub">都市間高速鉄道</span>
+        </a>
+        <div class="masthead-meta">
+          <span class="meta">フロンティア線</span>
+          <span class="clock" data-clock aria-label="現地時刻">--:--:--</span>
+          <a class="city-link lab-link" href="/lab/">ラボ</a>
+          <a class="city-link city-link--city" href="https://rogerluo.org/">都市</a>
+          <nav class="langs" aria-label="言語">
+            <a href="/" hreflang="en">EN</a>
+            <a href="/zh-hans/" hreflang="zh-Hans">简</a>
+            <a href="/zh-hant/" hreflang="zh-Hant">繁</a>
+            <a href="/ja/" hreflang="ja" aria-current="page">日</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="service-line">
+          <span>フロンティア線</span>
+          <span>全席指定</span>
+        </div>
+
+        <div class="hero-grid">
+          <h1 id="hero-title">遠くへ、速く。</h1>
+          <p class="lede">中央駅から出る都市間高速鉄道。三つの都市、その先は地図の外へ。</p>
+        </div>
+
+        <div class="route" role="group" aria-label="フロンティア線の駅">
+          <div class="route-track">
+            <span class="route-train" id="route-train" aria-hidden="true">
+              <svg class="train-glyph" viewBox="0 0 34 12">
+                <path d="M2 6 C 3.5 2 6 0 9.5 0 H24.5 C 28 0 30.5 2 32 6" />
+              </svg>
+            </span>
+            <ol class="route-stops">
+              <li class="stop-item">
+                <button
+                  class="stop"
+                  type="button"
+                  data-station="central"
+                  data-sub="地下鉄乗換"
+                  data-text="都市の路線が終わるところから始まります。地下鉄とは階ひとつの乗り換え。"
+                  data-meta=""
+                  aria-pressed="true"
+                >
+                  <span class="stop-dot" aria-hidden="true"></span>
+                  <span class="stop-text">
+                    <span class="stop-name">中央駅</span>
+                  </span>
+                </button>
+              </li>
+              <li class="stop-item">
+                <button
+                  class="stop"
+                  type="button"
+                  data-station="foundry"
+                  data-sub="製造業"
+                  data-text="地下鉄の外の最初の都市。すでに都市へ品物を送っています。"
+                  data-meta="中央駅から 48 km · 11 分"
+                  aria-pressed="false"
+                >
+                  <span class="stop-dot" aria-hidden="true"></span>
+                  <span class="stop-text">
+                    <span class="stop-name">鋳造町</span>
+                  </span>
+                </button>
+              </li>
+              <li class="stop-item">
+                <button
+                  class="stop"
+                  type="button"
+                  data-station="meridian"
+                  data-sub="鉄道の要衝"
+                  data-text="路線の中間点。古い幹線が交わる、川の渡り。"
+                  data-meta="中央駅から 121 km · 29 分"
+                  aria-pressed="false"
+                >
+                  <span class="stop-dot" aria-hidden="true"></span>
+                  <span class="stop-text">
+                    <span class="stop-name">子午町</span>
+                  </span>
+                </button>
+              </li>
+              <li class="stop-item">
+                <button
+                  class="stop"
+                  type="button"
+                  data-station="horizon"
+                  data-sub="最後の都市"
+                  data-text="時刻表のある最後の都市。この先の需要は、まだ証明されていません。"
+                  data-meta="中央駅から 204 km · 48 分"
+                  aria-pressed="false"
+                >
+                  <span class="stop-dot" aria-hidden="true"></span>
+                  <span class="stop-text">
+                    <span class="stop-name">地平線</span>
+                  </span>
+                </button>
+              </li>
+              <li class="stop-item stop-item--survey">
+                <button
+                  class="stop"
+                  type="button"
+                  data-station="survey"
+                  data-sub="測量中"
+                  data-text="測量中の大地。路線が採算に乗るとき、駅になります。"
+                  data-meta="中央駅から約 300 km · 時刻表はまだありません"
+                  aria-pressed="false"
+                >
+                  <span class="stop-dot" aria-hidden="true"></span>
+                  <span class="stop-text">
+                    <span class="stop-name">ニューホライズン</span>
+                  </span>
+                </button>
+              </li>
+            </ol>
+
+          <div class="route-note" id="route-panel" aria-live="polite">
+            <p class="route-note-head">
+              <span class="route-note-name">中央駅</span>
+              <span class="route-note-sub">地下鉄乗換</span>
+            </p>
+            <div class="route-note-body">
+              <p class="route-note-text">都市の路線が終わるところから始まります。地下鉄とは階ひとつの乗り換え。</p>
+              <p class="route-note-meta" hidden></p>
+              <a class="route-note-link" href="https://rogerluo.org/#/station/central">都市の地図で中央駅へ</a>
+            </div>
+          </div>
+          </div>
+        </div>
+        <dl class="figures" aria-label="数字で見る開拓号">
+          <div><dt>最高速度</dt><dd><span class="figure-value">400</span><span class="figure-unit">km/h</span></dd></div>
+          <div><dt>中央駅から地平線</dt><dd><span class="figure-value">48</span><span class="figure-unit">分</span></dd></div>
+          <div><dt>片道 1 時間あたりの座席</dt><dd><span class="figure-value">3,300</span></dd></div>
+          <div><dt>1 人キロあたりの CO₂</dt><dd><span class="figure-value">18</span><span class="figure-unit">g</span></dd></div>
+        </dl>
+        <p class="note">ラボのモデルの、初期設定での計算値。</p>
+      </section>
+
+      <section class="section wrap" aria-labelledby="log-title">
+        <div class="section-rail">
+          <h2 id="log-title">測量日誌</h2>
+          <p>私たちが探っていること、そしてそれぞれがどこまで来たか。</p>
+        </div>
+
+        <div class="section-body">
+          <ol class="log">
+            <li class="log-entry">
+              <div class="log-head">
+                <h3>高速鉄道</h3>
+                <p class="log-question">時速 400 km で路線を走らせるには、何が要るのか。</p>
+                <p class="log-started">2026 年 11 月 8 日 開始</p>
+              </div>
+              <div class="log-body">
+                <ol class="log-line" aria-label="現在地は地平線：まとめる"><li class="log-stop is-passed"><span class="log-dot"></span><span class="log-name">中央駅</span></li><li class="log-stop is-passed"><span class="log-dot"></span><span class="log-name">鋳造町</span></li><li class="log-stop is-passed"><span class="log-dot"></span><span class="log-name">子午町</span></li><li class="log-stop is-here"><span class="log-dot"></span><span class="log-name">地平線</span></li><li class="log-stop"><span class="log-dot"></span><span class="log-name">ニューホライズン</span></li></ol>
+                <p class="log-at">現在地は地平線：まとめる</p>
+                <p class="log-now">時刻表、物理、信号、CO₂ を、営業中の十路線と比べて。</p>
+                <p class="log-next">まだ答えの出ていない問い：建設費と、その回収。</p>
+                <a class="rail-link" href="/lab/">ラボで開く（英語）</a>
+              </div>
+            </li>
+            <li class="log-entry">
+              <div class="log-head">
+                <h3>車両の健全性管理</h3>
+                <p class="log-question">列車が止まる前に、車両はどうやって故障を見つけるのか。</p>
+                <p class="log-started">2026 年 11 月 8 日 開始</p>
+              </div>
+              <div class="log-body">
+                <ol class="log-line" aria-label="現在地は子午町：ほかの分野と交わる"><li class="log-stop is-passed"><span class="log-dot"></span><span class="log-name">中央駅</span></li><li class="log-stop is-passed"><span class="log-dot"></span><span class="log-name">鋳造町</span></li><li class="log-stop is-here"><span class="log-dot"></span><span class="log-name">子午町</span></li><li class="log-stop"><span class="log-dot"></span><span class="log-name">地平線</span></li><li class="log-stop"><span class="log-dot"></span><span class="log-name">ニューホライズン</span></li></ol>
+                <p class="log-at">現在地は子午町：ほかの分野と交わる</p>
+                <p class="log-now">車両の健全性ボード、故障の予測、警報の兼ね合い、そして実際の事故の教訓。</p>
+                <p class="log-next">まだ答えの出ていない問い：実際の車両データ、振動解析、残りの寿命。</p>
+                <a class="rail-link" href="/lab/#health">ラボで開く（英語）</a>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section wrap" aria-labelledby="train-title">
+        <div class="section-rail">
+          <h2 id="train-title">列車</h2>
+          <p>長いノーズ、静かな車両、指定席。</p>
+          <dl class="specs">
+            <div><dt>列車名</dt><dd>開拓号</dd></div>
+            <div><dt>路線</dt><dd>フロンティア線</dd></div>
+            <div><dt>駆動方式</dt><dd>25 kV 架線集電</dd></div>
+            <div><dt>最高速度</dt><dd>400 km/h</dd></div>
+            <div><dt>座席</dt><dd>指定席</dd></div>
+            <div><dt>状態</dt><dd>建設中</dd></div>
+          </dl>
+          <a class="rail-link" href="/lab/">ラボで路線を走らせる</a>
+        </div>
+
+        <div class="section-body">
+          <figure class="train-figure">
+            <div class="view-head"><span>1 両</span><span>先頭車、長いノーズ</span></div>
+            <svg
+              class="train-car"
+              viewBox="0 0 1000 240"
+              role="img"
+              aria-labelledby="train-car-desc"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <title id="train-car-desc">開拓号の 1 両：長いシングルアーチのノーズ、面一の側面窓、台車まわりの覆い。</title>
+              <path
+                d="M15 196 C 140 120 340 50 580 50 H960"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                vector-effect="non-scaling-stroke"
+              />
+            </svg>
+
+            <div class="view-head"><span>全編成</span><span>8 両、202 m</span></div>
+            <svg
+              class="train-set"
+              viewBox="0 0 7640 300"
+              role="img"
+              aria-labelledby="train-set-desc"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <title id="train-set-desc">開拓号の全編成：8 両が一列に並び、両端に先頭部があります。6 号車は静音車です。</title>
+              <path
+                d="M40 196 C 165 120 365 50 605 50 H7035 C 7275 50 7475 120 7600 196"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                vector-effect="non-scaling-stroke"
+              />
+              <path
+                d="M985 50v12M1930 50v12M2875 50v12M3820 50v12M4765 50v12M5710 50v12M6615 50v12"
+                stroke="currentColor"
+                stroke-opacity=".35"
+                stroke-width="1"
+                vector-effect="non-scaling-stroke"
+              />
+              <g class="car-label" text-anchor="middle">
+<text x="512.5" y="185">1</text>
+<text x="1457.5" y="185">2</text>
+<text x="2402.5" y="185">3</text>
+<text x="3347.5" y="185">4</text>
+<text x="4292.5" y="185">5</text>
+<text x="5237.5" y="185" class="car-label--quiet">6</text>
+<text x="6182.5" y="185">7</text>
+<text x="7127.5" y="185">8</text>
+                <text x="5237.5" y="275" class="car-label--quiet car-label--small">静音</text>
+              </g>
+            </svg>
+
+            <figcaption>同じ縮尺で描いています。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section wrap" aria-labelledby="design-title">
+        <div class="section-rail">
+          <h2 id="design-title">設計</h2>
+          <p>どう造り、どう走らせるか。</p>
+        </div>
+
+        <div class="section-body">
+          <div class="tabs" role="tablist" aria-label="設計の側面">
+            <button class="tab" type="button" id="tab-technical" role="tab" aria-selected="true" aria-controls="panel-technical">技術</button>
+            <button class="tab" type="button" id="tab-service" role="tab" aria-selected="false" aria-controls="panel-service" tabindex="-1">サービス</button>
+            <button class="tab" type="button" id="tab-environmental" role="tab" aria-selected="false" aria-controls="panel-environmental" tabindex="-1">環境</button>
+            <button class="tab" type="button" id="tab-economic" role="tab" aria-selected="false" aria-controls="panel-economic" tabindex="-1">経済</button>
+            <button class="tab" type="button" id="tab-integration" role="tab" aria-selected="false" aria-controls="panel-integration" tabindex="-1">接続</button>
+          </div>
+
+          <div class="tab-panel" id="panel-technical" role="tabpanel" aria-labelledby="tab-technical" tabindex="0">
+            <dl class="traits">
+              <div>
+                <dt>ノーズ</dt>
+                <dd>長いシングルアーチ。トンネルの圧力波をやわらげます。E5 系新幹線と同じ理由です。</dd>
+              </div>
+              <div>
+                <dt>車体</dt>
+                <dd>アルミと複合材。フラッシュな側面、覆われた台枠。</dd>
+              </div>
+              <div>
+                <dt>気圧</dt>
+                <dd>気密と能動的な空気制御で、トンネルでも耳はほとんど気づきません。</dd>
+              </div>
+              <div>
+                <dt>駆動</dt>
+                <dd>SiC 変換器（N700S）と永久磁石モーター（AGV）。小さく、効率が高い。</dd>
+              </div>
+              <div>
+                <dt>ブレーキ</dt>
+                <dd>まず回生。残りは渦電流ブレーキとカーボンセラミックのディスク（CR450 向けに試験）。</dd>
+              </div>
+              <div>
+                <dt>サスペンション</dt>
+                <dd>空気ばねと、車体の揺れを打ち消すアクティブダンパー。</dd>
+              </div>
+              <div>
+                <dt>車体傾斜</dt>
+                <dd>曲線で最大 <span class="num">1 度</span>。N700 系はこれで <span class="num">270 km/h</span> を保ちます。</dd>
+              </div>
+              <div>
+                <dt>信号</dt>
+                <dd>ETCS レベル 2 と自動運転。運転士は見守ります。</dd>
+              </div>
+              <div>
+                <dt>モニタリング</dt>
+                <dd>部品は状態を見て交換。周期でも、故障後でもなく。</dd>
+              </div>
+              <div>
+                <dt>運転台</dt>
+                <dd>両端に運転台。方向転換は要りません。</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="tab-panel" id="panel-service" role="tabpanel" aria-labelledby="tab-service" tabindex="0" hidden>
+            <dl class="traits">
+              <div>
+                <dt>客室</dt>
+                <dd>単一クラス。あたたかな光、すべての列に窓。</dd>
+              </div>
+              <div>
+                <dt>静音車</dt>
+                <dd><span class="num">6</span> 号車は静けさのために。</dd>
+              </div>
+              <div>
+                <dt>乗務員</dt>
+                <dd>乗務員が巡回し、席まで来ます。</dd>
+              </div>
+              <div>
+                <dt>荷物</dt>
+                <dd>同じ車両に、手の届くところへ。</dd>
+              </div>
+              <div>
+                <dt>駅</dt>
+                <dd>ホームの高さはひとつ。ドアはいつも同じ位置に。</dd>
+              </div>
+              <div>
+                <dt>ラウンジ</dt>
+                <dd>両端だけでなく、すべての駅に。</dd>
+              </div>
+              <div>
+                <dt>座席</dt>
+                <dd>自分の範囲でリクライニング。</dd>
+              </div>
+              <div>
+                <dt>バリアフリー</dt>
+                <dd>段差のない乗降。各車両に車いすスペース。</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="tab-panel" id="panel-environmental" role="tabpanel" aria-labelledby="tab-environmental" tabindex="0" hidden>
+            <dl class="traits">
+              <div>
+                <dt>エネルギー</dt>
+                <dd>ブレーキのエネルギーを架線へ戻します。</dd>
+              </div>
+              <div>
+                <dt>炭素</dt>
+                <dd>鉄道は 1 人キロあたり CO₂ <span class="num">4.5</span>〜<span class="num">35 g</span>、車 <span class="num">167 g</span>、飛行機 <span class="num">229 g</span>（英国政府の数値）。</dd>
+              </div>
+              <div>
+                <dt>建設</dt>
+                <dd>建設と保守で 1 km あたり年約 <span class="num">58 t</span> の CO₂。<span class="num">10</span>〜<span class="num">30</span> 年で返します（UIC）。</dd>
+              </div>
+              <div>
+                <dt>土地</dt>
+                <dd>細い複線ひと筋。高速道路ではありません。</dd>
+              </div>
+              <div>
+                <dt>水</dt>
+                <dd>高架が川と獣の道を開けたままにします。</dd>
+              </div>
+              <div>
+                <dt>空気</dt>
+                <dd>ホームに排気はありません。</dd>
+              </div>
+              <div>
+                <dt>騒音</dt>
+                <dd>フラッシュな車体と台車のスカートが、騒音を線路のそばにとどめます。</dd>
+              </div>
+              <div>
+                <dt>保守</dt>
+                <dd>状態監視と標準部品。車両は走ることに時間を使います。</dd>
+              </div>
+              <div>
+                <dt>素材</dt>
+                <dd>再利用できるアルミ。分解できる複合材。</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="tab-panel" id="panel-economic" role="tabpanel" aria-labelledby="tab-economic" tabindex="0" hidden>
+            <dl class="traits">
+              <div>
+                <dt>輸送力</dt>
+                <dd>片道 1 時間 <span class="num">3,300 席</span>。<span class="num">8</span> 両編成が 1 時間に <span class="num">6</span> 本。</dd>
+              </div>
+              <div>
+                <dt>コスト</dt>
+                <dd>駅は少なく、ホームは一種類。お金は線路に。</dd>
+              </div>
+              <div>
+                <dt>運賃</dt>
+                <dd>距離制で、公表された固定の運賃。</dd>
+              </div>
+              <div>
+                <dt>開発</dt>
+                <dd>駅のまわりに住まいと職場。</dd>
+              </div>
+              <div>
+                <dt>延伸</dt>
+                <dd>一駅ずつ。新しい線路、同じサービス。</dd>
+              </div>
+              <div>
+                <dt>折り返し</dt>
+                <dd>両端で <span class="num">15 分</span>。予備を含めて <span class="num">15</span> 編成でダイヤを回します。</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="tab-panel" id="panel-integration" role="tabpanel" aria-labelledby="tab-integration" tabindex="0" hidden>
+            <dl class="traits">
+              <div>
+                <dt>都市</dt>
+                <dd>路線は都市の中、中央駅で終わります。</dd>
+              </div>
+              <div>
+                <dt>乗り換え</dt>
+                <dd>地下鉄とは階ひとつ。駅を移る必要はありません。</dd>
+              </div>
+              <div>
+                <dt>時刻表</dt>
+                <dd>地下鉄に合わせて発車。待ちは数分です。</dd>
+              </div>
+              <div>
+                <dt>きっぷ</dt>
+                <dd>地下鉄からフロンティア線まで一枚。</dd>
+              </div>
+              <div>
+                <dt>アクセス</dt>
+                <dd>どの駅にも徒歩、自転車、バス。駐車場ではなく。</dd>
+              </div>
+              <div>
+                <dt>街路</dt>
+                <dd>町は高架で横切り、下の道はそのまま。</dd>
+              </div>
+              <div>
+                <dt>駅</dt>
+                <dd>屋根ひとつ、両側の街路に開いた駅。</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="sources">
+            <details>
+              <summary><h3>出典</h3></summary>
+              <p>数字の出どころ。</p>
+              <ul>
+              <li><a href="https://en.wikipedia.org/wiki/Tunnel_boom" rel="noopener">Wikipedia（英語）：Tunnel boom</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/N700S_series" rel="noopener">Wikipedia（英語）：N700S series</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/AGV_(train)" rel="noopener">Wikipedia（英語）：AGV (train)</a></li>
+              <li><a href="https://rollingstockworld.com/passenger-cars/china-develops-cr450-emu-with-the-highest-operating-speed-in-the-world/" rel="noopener">Rolling Stock World：中国、営業速度世界最高の CR450 を開発（2023）</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/N700_series" rel="noopener">Wikipedia（英語）：N700 series</a></li>
+              <li><a href="https://transport.ec.europa.eu/transport-modes/rail/ertms/what-ertms-and-how-does-it-work/etcs-levels-and-modes_en" rel="noopener">欧州委員会：ETCS のレベルとモード</a></li>
+              <li><a href="https://global.chinadaily.com.cn/a/201706/27/WS59bbf452a310ded8ac18f693.html" rel="noopener">China Daily：復興号の運行開始（2017 年 6 月）</a></li>
+              <li><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2025" rel="noopener">英国エネルギー安全保障・ネットゼロ省：温室効果ガス報告の換算係数 2025</a></li>
+              <li><a href="https://rail-research.europa.eu/wp-content/uploads/2023/01/HSR_Technical_Report_2_Final_220123.pdf" rel="noopener">EY（Europe’s Rail 共同事業体の委託）：EU の高速鉄道 2030 年と 2050 年、技術報告 2（2023）</a></li>
+              <li><a href="https://uic.org/activities/carbon-footprint-and-sustainability" rel="noopener">UIC：炭素フットプリントと持続可能性</a></li>
+              </ul>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="closing wrap" aria-labelledby="closing-title">
+        <div class="closing-grid">
+          <h2 id="closing-title">都市は始まり。</h2>
+          <p>
+            地下鉄は、私たちが暮らす場所。開拓号は、私たちが向かう先。
+            <a href="https://rogerluo.org/#/station/central">都市へ戻る</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer wrap">
+      <p>
+        開拓号は都市の高速鉄道サービス。都市は <a href="https://rogerluo.org/">rogerluo.org</a>。
+      </p>
+      <p>© Roger Luo · together, onward</p>
+    </footer>
+
+  </body>
+</html>

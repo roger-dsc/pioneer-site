@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>High-speed rail lab: the Frontier line</title>
+    <meta name="theme-color" content="#0B0F13" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <link rel="alternate icon" type="image/png" href="/favicon.png?v=2" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+    <link rel="canonical" href="https://pioneer.rogerluo.org/lab/" />
+    <meta name="description" content="Change the timetable of the Frontier line and see what it does to journey time, capacity, energy and carbon, then compare it with high-speed lines around the world." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pioneer.rogerluo.org/lab/" />
+    <meta property="og:title" content="High-speed rail lab: the Frontier line" />
+    <meta property="og:description" content="Change the timetable of the Frontier line and see what it does to journey time, capacity, energy and carbon, then compare it with high-speed lines around the world." />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content="https://pioneer.rogerluo.org/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://pioneer.rogerluo.org/og.png" />
+    <meta name="twitter:title" content="High-speed rail lab: the Frontier line" />
+    <meta name="twitter:description" content="Change the timetable of the Frontier line and see what it does to journey time, capacity, energy and carbon, then compare it with high-speed lines around the world." />
+    <script type="module" crossorigin src="/assets/lab-AiZiiLOe.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/style-L8n4z4N2.js">
+    <link rel="stylesheet" crossorigin href="/assets/style-DtkXrFLc.css">
+    <link rel="stylesheet" crossorigin href="/assets/lab-B5prlskH.css">
+  </head>
+  <body class="lab-page">
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="masthead">
+      <div class="wrap masthead-inner">
+        <a class="brand" href="/" aria-label="Pioneer, home" data-service-link>
+          <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M2 17 C 4 11.5 7 8.5 11 8.5 H22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span class="brand-name">Pioneer</span>
+          <span class="brand-sub">Intercity high speed</span>
+        </a>
+        <div class="masthead-meta">
+          <span class="meta">Frontier line</span>
+          <a class="city-link service-link" href="/" data-service-link>← The service</a>
+          <span class="clock" data-clock aria-label="Local time">--:--:--</span>
+          <a class="city-link city-link--city" href="https://rogerluo.org/">The city</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="lab-hero wrap" aria-labelledby="lab-title">
+        <p class="lab-eyebrow">Frontier line · Lab</p>
+        <div class="lab-hero-grid">
+          <h1 id="lab-title">Run the line.</h1>
+          <p class="lede">Change the timetable and the line answers: trip time, seats, energy and carbon.</p>
+        </div>
+      </section>
+
+      <section class="lab-board wrap" aria-label="Run the line.">
+        <div class="lab-controls">
+            <div class="control">
+              <span class="control-label">Top speed</span>
+              <div class="segmented" role="group" aria-label="Top speed">
+                <button type="button" class="seg" data-control="speed" data-value="300" aria-pressed="false">300</button>
+                <button type="button" class="seg" data-control="speed" data-value="350" aria-pressed="false">350</button>
+                <button type="button" class="seg" data-control="speed" data-value="400" aria-pressed="true">400</button>
+              </div>
+            </div>
+            <div class="control">
+              <span class="control-label">Stops</span>
+              <div class="segmented" role="group" aria-label="Stops">
+                <button type="button" class="seg" data-control="stops" data-value="all" aria-pressed="true">All three</button>
+                <button type="button" class="seg" data-control="stops" data-value="two" aria-pressed="false">Meridian and Horizon</button>
+                <button type="button" class="seg" data-control="stops" data-value="express" aria-pressed="false">Non-stop</button>
+              </div>
+            </div>
+            <div class="control">
+              <span class="control-label">Trains an hour</span>
+              <div class="segmented" role="group" aria-label="Trains an hour">
+                <button type="button" class="seg" data-control="frequency" data-value="4" aria-pressed="false">4</button>
+                <button type="button" class="seg" data-control="frequency" data-value="6" aria-pressed="true">6</button>
+                <button type="button" class="seg" data-control="frequency" data-value="8" aria-pressed="false">8</button>
+              </div>
+            </div>
+            <div class="control">
+              <span class="control-label">Train length</span>
+              <div class="segmented" role="group" aria-label="Train length">
+                <button type="button" class="seg" data-control="length" data-value="8" aria-pressed="true">8 cars</button>
+                <button type="button" class="seg" data-control="length" data-value="12" aria-pressed="false">12 cars</button>
+                <button type="button" class="seg" data-control="length" data-value="16" aria-pressed="false">16 cars</button>
+              </div>
+            </div>
+        </div>
+
+        <div class="lab-readouts" aria-live="polite">
+            <div class="readout">
+              <span class="readout-value" data-readout="time">—</span>
+              <span class="readout-label">Central to Horizon</span>
+            </div>
+            <div class="readout">
+              <span class="readout-value" data-readout="seats">—</span>
+              <span class="readout-label">Seats an hour</span>
+            </div>
+            <div class="readout">
+              <span class="readout-value" data-readout="energy">—</span>
+              <span class="readout-label">Energy per seat-km</span>
+            </div>
+            <div class="readout">
+              <span class="readout-value" data-readout="carbon">—</span>
+              <span class="readout-label">CO₂ per passenger-km</span>
+            </div>
+        </div>
+
+        <figure class="lab-profile">
+          <div class="profile-frame" id="profile" role="img" aria-label="Speed along the Frontier line"></div>
+          <figcaption class="line-caption">Speed along the line, Central to Horizon.</figcaption>
+        </figure>
+      </section>
+
+      <section class="lab-work wrap" aria-label="Run the line.">
+        <div class="tabs" role="tablist" aria-label="Run the line.">
+          <button class="tab" type="button" id="lab-tab-timetable" role="tab" aria-selected="true" aria-controls="lab-panel-timetable">Timetable</button>
+          <button class="tab" type="button" id="lab-tab-physics" role="tab" aria-selected="false" aria-controls="lab-panel-physics" tabindex="-1">Physics</button>
+          <button class="tab" type="button" id="lab-tab-signalling" role="tab" aria-selected="false" aria-controls="lab-panel-signalling" tabindex="-1">Signalling</button>
+          <button class="tab" type="button" id="lab-tab-fleet" role="tab" aria-selected="false" aria-controls="lab-panel-fleet" tabindex="-1">Fleet</button>
+          <button class="tab" type="button" id="lab-tab-health" role="tab" aria-selected="false" aria-controls="lab-panel-health" tabindex="-1">Vehicle health management</button>
+          <button class="tab" type="button" id="lab-tab-carbon" role="tab" aria-selected="false" aria-controls="lab-panel-carbon" tabindex="-1">Carbon</button>
+          <button class="tab" type="button" id="lab-tab-technology" role="tab" aria-selected="false" aria-controls="lab-panel-technology" tabindex="-1">Technology</button>
+          <button class="tab" type="button" id="lab-tab-world" role="tab" aria-selected="false" aria-controls="lab-panel-world" tabindex="-1">Around the world</button>
+        </div>
+
+        <div class="tab-panel" id="lab-panel-timetable" role="tabpanel" aria-labelledby="lab-tab-timetable" tabindex="0">
+          <p class="lab-caption">Departures from Central.</p>
+          <div class="timetable-wrap">
+            <table class="timetable">
+              <thead>
+                <tr>
+                  <th scope="col">Central</th>
+                  <th scope="col">Foundry</th>
+                  <th scope="col">Meridian</th>
+                  <th scope="col">Horizon</th>
+                </tr>
+              </thead>
+              <tbody id="timetable-body"></tbody>
+            </table>
+          </div>
+          <p class="lab-note">Three minutes at each stop, and fifteen to turn round at each end.</p>
+        </div>
+
+        <div class="tab-panel" id="lab-panel-physics" role="tabpanel" aria-labelledby="lab-tab-physics" tabindex="0" hidden>
+          <p class="lab-caption">The numbers behind the timetable.</p>
+          <dl class="lab-facts lab-facts--figures">
+              <div><dt>Power of the train</dt><dd data-fact="power">—</dd></div>
+              <div><dt>To reach top speed</dt><dd data-fact="accelerate">—</dd></div>
+              <div><dt>To stop from top speed</dt><dd data-fact="brake">—</dd></div>
+              <div><dt>Tightest curve at top speed</dt><dd data-fact="curve">—</dd></div>
+              <div><dt>Steepest climb it holds top speed on</dt><dd data-fact="climb">—</dd></div>
+              <div><dt>Energy for one run, Central to Horizon</dt><dd data-fact="energy">—</dd></div>
+              <div><dt>Given back by braking</dt><dd data-fact="regen">—</dd></div>
+              <div><dt>Loaded train</dt><dd data-fact="mass">—</dd></div>
+          </dl>
+          <p class="lab-note">Power: an eight-car train reaches 350 km/h in 4 min 40 s, as the CR450 does<sup class="cite"><a href="#src-rn">5</a></sup>; a 200 m Velaro D has 8,000 kW<sup class="cite"><a href="#src-velaro">7</a></sup>. Curves: banked up to 180 mm, with up to 100 mm unbalanced above 300 km/h<sup class="cite"><a href="#src-pk">10</a></sup>.</p>
+          <details class="lab-more">
+            <summary><h3 class="lab-subhead">Did you know</h3></summary>
+            <ul class="facts">
+              <li>The CR450 is about 50 tonnes lighter and 20 cm lower than the Fuxing trains before it, and reaches 350 km/h about 100 seconds sooner<sup class="cite"><a href="#src-rn">5</a></sup>.</li>
+              <li>The CR450 is built for 450 km/h and is to run at 400; its brakes stop it in about the distance a slower train needs<sup class="cite"><a href="#src-rg">6</a></sup>.</li>
+              <li>Cologne–Frankfurt climbs grades of up to 4%, steep for a main line. It can, because only passenger trains use it<sup class="cite"><a href="#src-w-kf">36</a></sup>.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="tab-panel" id="lab-panel-signalling" role="tabpanel" aria-labelledby="lab-tab-signalling" tabindex="0" hidden>
+          <p class="lab-caption">At high speed the signal comes into the cab<sup class="cite"><a href="#src-tvm">11</a></sup>. How close can two trains run?</p>
+          <dl class="lab-facts lab-facts--figures lab-facts--five">
+              <div><dt>To stop from top speed</dt><dd data-sig="brake">—</dd></div>
+              <div><dt>One block, if braking takes four</dt><dd data-sig="block">—</dd></div>
+              <div><dt>Closest gap at top speed, fixed blocks</dt><dd data-sig="fixed">—</dd></div>
+              <div><dt>Closest gap at top speed, moving block</dt><dd data-sig="moving">—</dd></div>
+              <div><dt>Your timetable</dt><dd data-sig="timetable">—</dd></div>
+          </dl>
+          <div class="sig-diagram" id="sig-diagram" aria-hidden="true"></div>
+          <p class="lab-note">Fixed blocks: the train behind must stop short of the occupied block, and braking runs over about four<sup class="cite"><a href="#src-tvm">11</a></sup>. Moving block: it follows the tail ahead, at braking distance plus a margin.</p>
+          <details class="lab-more">
+            <summary><h3 class="lab-subhead">Who uses what</h3></summary>
+          <dl class="systems">
+              <div><dt>ETCS Level 2</dt><dd>Movement authority by radio and the permitted speed in the cab; lineside signals are optional. Since 2023 the EU counts moving block as part of Level 2<sup class="cite"><a href="#src-ec">12</a></sup>.<span class="systems-where">Madrid–Barcelona<sup class="cite"><a href="#src-w-mb">37</a></sup>; coming to LGV Sud-Est<sup class="cite"><a href="#src-w-se">35</a></sup> and to Cologne–Frankfurt in 2028<sup class="cite"><a href="#src-w-kf">36</a></sup>. Pioneer runs on it, with automatic train operation.</span></dd></div>
+              <div><dt>TVM</dt><dd>France’s cab signalling. The line is cut into blocks of about 1,500 m, and the cab shows the permitted speed<sup class="cite"><a href="#src-tvm">11</a></sup>.<span class="systems-where">LGV Sud-Est (TVM-300)<sup class="cite"><a href="#src-w-se">35</a></sup>; Gyeongbu in Korea (TVM 430)<sup class="cite"><a href="#src-w-gb">40</a></sup></span></dd></div>
+              <div><dt>LZB</dt><dd>Germany’s continuous cab signalling.<span class="systems-where">Cologne–Frankfurt, until ETCS Level 2 in 2028<sup class="cite"><a href="#src-w-kf">36</a></sup></span></dd></div>
+              <div><dt>CTCS-3</dt><dd>China’s train control: on Beijing–Shanghai it allows running at up to 380 km/h<sup class="cite"><a href="#src-w-bs">38</a></sup>.<span class="systems-where">Beijing–Shanghai<sup class="cite"><a href="#src-w-bs">38</a></sup>; Jakarta–Bandung<sup class="cite"><a href="#src-w-jb">43</a></sup></span></dd></div>
+              <div><dt>Digital ATC</dt><dd>Japan’s cab signalling; on the Tōkaidō Shinkansen, ATC-NS<sup class="cite"><a href="#src-w-tk">34</a></sup>.<span class="systems-where">Tōkaidō Shinkansen<sup class="cite"><a href="#src-w-tk">34</a></sup></span></dd></div>
+          </dl>
+          </details>
+          <details class="lab-more">
+            <summary><h3 class="lab-subhead">Did you know</h3></summary>
+            <ul class="facts">
+              <li>TVM blocks are about 1,500 m on open line, and a tenth of that in the Channel Tunnel’s terminal areas<sup class="cite"><a href="#src-tvm">11</a></sup>.</li>
+              <li>The Tōkaidō Shinkansen runs up to 12 Nozomi an hour each way<sup class="cite"><a href="#src-jrar">2</a></sup>.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="tab-panel" id="lab-panel-fleet" role="tabpanel" aria-labelledby="lab-tab-fleet" tabindex="0" hidden>
+          <p class="lab-caption">The trains it takes to run the timetable.</p>
+          <dl class="lab-facts lab-facts--figures">
+              <div><dt>Trains in service</dt><dd data-fleet="inService">—</dd></div>
+              <div><dt>Spares</dt><dd data-fleet="spares">—</dd></div>
+              <div><dt>Each train runs, a day</dt><dd data-fleet="km">—</dd></div>
+              <div><dt>Round trip, with turn-rounds</dt><dd data-fleet="cycle">—</dd></div>
+          </dl>
+          <p class="lab-note">Spares cover the trains at the depot.</p>
+          <details class="lab-more">
+            <summary><h3 class="lab-subhead">Did you know</h3></summary>
+            <ul class="facts">
+              <li>The Shinkansen shuts down between midnight and 06:00 every day for maintenance<sup class="cite"><a href="#src-w-sk">33</a></sup>.</li>
+              <li>China runs 1,644 Fuxing trainsets<sup class="cite"><a href="#src-rg">6</a></sup>.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="tab-panel" id="lab-panel-health" role="tabpanel" aria-labelledby="lab-tab-health" tabindex="0" hidden>
+          <p class="lab-caption">Catch a fault while it is still a trend, and send the train to the depot before it fails.</p>
+          <p class="lab-note lab-note--lead">A fault can first be detected at P, some time before the part fails at F<sup class="cite"><a href="#src-pf">20</a></sup>. The usual rule: check at least every half of that interval<sup class="cite"><a href="#src-rw">21</a></sup>.</p>
+          <h3 class="lab-subhead">Health board</h3>
+          <div class="board-controls">
+            <label class="day-control">
+              <span class="control-label">Day <output id="fleet-day-out">1</output></span>
+              <input type="range" id="fleet-day" min="1" max="30" value="1" />
+            </label>
+            <div class="control">
+              <span class="control-label">Bearings checked every</span>
+              <div class="segmented" role="group" aria-label="Bearings checked every">
+                <button type="button" class="seg" data-control="checks" data-value="run" aria-pressed="true">Run</button>
+                <button type="button" class="seg" data-control="checks" data-value="3" aria-pressed="false">3 days</button>
+                <button type="button" class="seg" data-control="checks" data-value="7" aria-pressed="false">7 days</button>
+                <button type="button" class="seg" data-control="checks" data-value="30" aria-pressed="false">30 days</button>
+              </div>
+            </div>
+          </div>
+          <dl class="lab-facts">
+              <div><dt>First seen (P)</dt><dd data-pf="p">—</dd></div>
+              <div><dt>Would fail (F)</dt><dd data-pf="f">—</dd></div>
+              <div><dt>Check at least every</dt><dd data-pf="every">—</dd></div>
+              <div><dt>This plan</dt><dd data-pf="plan">—</dd></div>
+              <div><dt>Predicted from the trend</dt><dd data-pf="predict">—</dd></div>
+          </dl>
+          <figure class="trend">
+            <figcaption class="trend-title">P04, a bearing on car 3, °C above its pair</figcaption>
+            <div class="trend-frame" id="trend" role="img" aria-label="One bearing’s temperature over the month, against the watch, repair and detector levels"></div>
+            <p class="trend-key"><span class="trend-key-measured">Measured</span><span class="trend-key-unmeasured">Not measured</span><span class="trend-key-predicted">Predicted</span></p>
+          </figure>
+          <div class="timetable-wrap">
+            <table class="timetable health">
+              <thead>
+                <tr>
+                  <th scope="col">Train</th>
+                  <th scope="col">Bearings</th>
+                  <th scope="col">Wheels</th>
+                  <th scope="col">Pantograph</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="health-body"></tbody>
+            </table>
+          </div>
+          <h3 class="lab-subhead">Log</h3>
+          <ol class="health-log" id="health-log" aria-live="polite"></ol>
+          <p class="lab-note">Sensors on every run see the trend days early. Depot checks find it only if one falls between P and F. Every 30 days, a trackside detector finds it hot, with passengers aboard. Illustrative: the fleet and its faults are made up.</p>
+
+          <h3 class="lab-subhead">Set the alarm</h3>
+          <p class="lab-note lab-note--lead">Set it low and faults are caught early, but healthy bearings trip it too. Ask for readings in a row and the noise cancels, but the warning comes later.</p>
+          <div class="board-controls">
+            <div class="control">
+              <span class="control-label">Alarm at</span>
+              <div class="segmented" role="group" aria-label="Alarm at">
+                <button type="button" class="seg" data-control="level" data-value="6" aria-pressed="false">6 °C</button>
+                <button type="button" class="seg" data-control="level" data-value="10" aria-pressed="true">10 °C</button>
+                <button type="button" class="seg" data-control="level" data-value="15" aria-pressed="false">15 °C</button>
+                <button type="button" class="seg" data-control="level" data-value="20" aria-pressed="false">20 °C</button>
+              </div>
+            </div>
+            <div class="control">
+              <span class="control-label">Readings in a row</span>
+              <div class="segmented" role="group" aria-label="Readings in a row">
+                <button type="button" class="seg" data-control="inRow" data-value="1" aria-pressed="true">1</button>
+                <button type="button" class="seg" data-control="inRow" data-value="2" aria-pressed="false">2</button>
+                <button type="button" class="seg" data-control="inRow" data-value="3" aria-pressed="false">3</button>
+              </div>
+            </div>
+          </div>
+          <div class="alarm-readouts" aria-live="polite">
+            <div class="readout">
+              <span class="readout-value" data-alarm="warning">—</span>
+              <span class="readout-label">Warning before it would fail</span>
+            </div>
+            <div class="readout">
+              <span class="readout-value" data-alarm="false">—</span>
+              <span class="readout-label">False alarms a year, whole fleet</span>
+            </div>
+          </div>
+          <p class="lab-note" id="alarm-note"></p>
+
+          <details class="lab-more">
+            <summary><h3 class="lab-subhead">What is watched</h3></summary>
+          <dl class="systems">
+              <div><dt>Axle bearings</dt><dd><span class="systems-fault">Overheat, then seize.</span>Temperature and vibration sensors on the bogie as the train runs; heat and acoustic detectors beside the track. Microphones can hear damage inside a bearing, often well before it is hot enough to set off a temperature alarm<sup class="cite"><a href="#src-aar">19</a></sup>.</dd></div>
+              <div><dt>Wheels</dt><dd><span class="systems-fault">Flat spots, out of round, a worn profile.</span>Detectors built into the track measure how hard each wheel hits the rail; lasers and cameras measure its shape and wear<sup class="cite"><a href="#src-aar">19</a></sup>. Worn wheels are turned back to shape at the depot.</dd></div>
+              <div><dt>Bogie frame</dt><dd><span class="systems-fault">Fatigue cracks.</span>Ultrasonic testing at the bogie and general inspections; and, in Japan since 2017, air-spring pressures and bogie temperatures watched for change as the train runs<sup class="cite"><a href="#src-jtsb">22</a></sup>.</dd></div>
+              <div><dt>Pantograph</dt><dd><span class="systems-fault">A worn carbon strip.</span>Cameras and sensors at the depot entrance inspect the outside of every car as it rolls in<sup class="cite"><a href="#src-jrar17">3</a></sup>; on the board, a strip is changed at 5 mm.</dd></div>
+              <div><dt>Traction</dt><dd><span class="systems-fault">A converter fails.</span>Built so one failure is not a stop: a Velaro D has four independent converters and still reaches its destination on 75% of its power if one fails<sup class="cite"><a href="#src-velaro">7</a></sup>.</dd></div>
+          </dl>
+          </details>
+          <details class="lab-more">
+            <summary><h3 class="lab-subhead">Five answers</h3></summary>
+          <p class="lab-note lab-note--lead">Reliability-centred maintenance gives each way a part can fail one of five answers<sup class="cite"><a href="#src-w-rcm">25</a></sup>:</p>
+          <dl class="systems">
+              <div><dt>Predictive</dt><dd>Watch the condition and act on the trend: the bearing sensors on the board.</dd></div>
+              <div><dt>Preventive</dt><dd>Restore or replace on a schedule, by time or distance, where a part wears out at a predictable age.</dd></div>
+              <div><dt>Detective</dt><dd>Test what only fails when it is needed, such as a standby system, before it is needed.</dd></div>
+              <div><dt>Run to failure</dt><dd>Let it fail, where failure is cheap and safe: a reading light.</dd></div>
+              <div><dt>One-time change</dt><dd>Change the design when no task can make it safe. After Eschede, every wheel of the failed design was replaced with a one-piece wheel within weeks<sup class="cite"><a href="#src-w-es">24</a></sup>.</dd></div>
+          </dl>
+          </details>
+          <details class="lab-more">
+            <summary><h3 class="lab-subhead">What is changing</h3></summary>
+          <dl class="systems">
+              <div><dt>Prediction, not only detection</dt><dd>Prognostics estimates how long a part has left, its remaining useful life, as a range that narrows as readings come in. Its methods learn from data, model the physics of the damage, or combine both<sup class="cite"><a href="#src-w-prog">26</a></sup>. On the board, with a reading on every run, the dashed line ahead of the bearing is that estimate.</dd></div>
+              <div><dt>Sensors that power themselves</dt><dd>Wireless sensors on the bogie run on the train’s own vibration, with no batteries or wiring, so an older fleet can be watched on every run too. Hitachi Rail says parts replaced on condition last more than 25% longer, and that none of the 3,000-plus carriages fitted has had a critical component fail in service<sup class="cite"><a href="#src-hitachi">27</a></sup>.</dd></div>
+              <div><dt>Thousands of sensors a train</dt><dd>China’s Fuxing trains carry more than 2,500 sensors, watching bearing temperatures, brakes and the cabin; when something is wrong, the train can slow down or stop by itself<sup class="cite"><a href="#src-cd17">28</a></sup>. The smart Fuxing built for the 2022 Winter Olympics has 2,700<sup class="cite"><a href="#src-cd22">29</a></sup>.</dd></div>
+              <div><dt>Compared with its neighbours</dt><dd>A reading means more beside others taken at the same moment. Norfolk Southern’s detectors raise an alert for a bearing much warmer than the others on the same side of the train, or on the same car, even below the absolute limit<sup class="cite"><a href="#src-ntsb">23</a></sup>. The board compares each bearing with its pair on the axle.</dd></div>
+              <div><dt>Every train an inspection train</dt><dd>Doctor Yellow, the Shinkansen’s yellow inspection train, measured the track and overhead wire at up to 270 km/h<sup class="cite"><a href="#src-w-dy">32</a></sup>. JR Central retired its set in January 2025; the work is moving to sensors and cameras on ordinary N700S trains<sup class="cite"><a href="#src-rsw">4</a></sup><sup class="cite"><a href="#src-jrar17">3</a></sup>.</dd></div>
+              <div><dt>Robots under the train</dt><dd>At Nanjing South, robots with two camera arms scan a high-speed train’s underside, and AI flags what they find. By hand, a standard train needs at least two inspectors for two and a half hours; with the robots, an hour and a ten-minute review<sup class="cite"><a href="#src-xinhua">30</a></sup>. At Zhanjiang North depot, a robot arm tests hollow axles by ultrasound for cracks of a millimetre<sup class="cite"><a href="#src-cgtn">31</a></sup>.</dd></div>
+          </dl>
+          </details>
+          <details class="lab-more">
+            <summary><h3 class="lab-subhead">Did you know</h3></summary>
+            <ul class="facts">
+              <li>Reliability-centred maintenance began with airlines: a 1978 report by United Airlines engineers for the US Department of Defense. Its starting point was that the old idea of a fixed safe life for every part was wrong in nearly every example in a modern jet airliner<sup class="cite"><a href="#src-w-rcm">25</a></sup>.</li>
+              <li>Vibration analysis can find a defect in a bearing’s inner race about 12 weeks before the bearing seizes; check it every 6 weeks or more often<sup class="cite"><a href="#src-pf">20</a></sup>.</li>
+              <li>In December 2017 the crew of Nozomi 34 noticed an unusual smell and noise from under the floor soon after leaving Hakata. The train ran on for over three hours; at Nagoya, staff found a crack 146 mm deep in a bogie side beam 170 mm high, with about 1,000 passengers aboard<sup class="cite"><a href="#src-jtsb">22</a></sup>.</li>
+              <li>On that train’s previous run, trackside detectors had recorded the bogie warmer than usual, but under the alarm level; and the air-spring pressures logged on the train show the crack was probably weakening the frame the day before<sup class="cite"><a href="#src-jtsb">22</a></sup>.</li>
+              <li>Afterwards JR Central went from two trackside bogie-temperature detectors between Tokyo and Shin-Osaka to five, and began judging each bogie by how its temperature changes, not only by a limit. JR West told its staff: do not hesitate to stop the train when safety cannot be confirmed<sup class="cite"><a href="#src-jtsb">22</a></sup>.</li>
+              <li>In February 2023, three trackside detectors read a freight car’s bearing at 38, then 103, then 253 °F above the air (about 21, 57 and 141 °C) in 75 minutes. Only the last crossed the 170 °F level at which a detector radios the crew; the train derailed minutes later at East Palestine, Ohio<sup class="cite"><a href="#src-ntsb">23</a></sup>.</li>
+              <li>The NTSB found that a failing bearing is likely hotter inside than a trackside detector can measure from outside<sup class="cite"><a href="#src-ntsb">23</a></sup>.</li>
+              <li>Before the Eschede derailment in 1998, which killed 101 people, the ICE’s wheel tyres were inspected by eye with torches; testing machines used earlier had been dropped for raising too many false alarms. In the two months before, staff filed eight complaints about noise and vibration from the bogie<sup class="cite"><a href="#src-w-es">24</a></sup>.</li>
+              <li>In China, an eight-car high-speed train is inspected every three days in service, a check of more than 10,000 components<sup class="cite"><a href="#src-xinhua">30</a></sup>.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="tab-panel" id="lab-panel-carbon" role="tabpanel" aria-labelledby="lab-tab-carbon" tabindex="0" hidden>
+          <p class="lab-caption">Grams of CO₂ per passenger-kilometre, on the same trip.</p>
+          <div class="carbon-chart">
+            <div class="carbon-row is-pioneer">
+              <span class="carbon-name">Pioneer</span>
+              <span class="carbon-track"><span class="carbon-bar" data-carbon-bar="pioneer"></span></span>
+              <span class="carbon-value"><span data-carbon-value="pioneer">—</span> g</span>
+            </div>
+            <div class="carbon-row">
+              <span class="carbon-name">International rail</span>
+              <span class="carbon-track"><span class="carbon-bar" data-carbon-bar="eurostar"></span></span>
+              <span class="carbon-value"><span data-carbon-value="eurostar">—</span> g</span>
+            </div>
+            <div class="carbon-row">
+              <span class="carbon-name">Car, one person</span>
+              <span class="carbon-track"><span class="carbon-bar" data-carbon-bar="car"></span></span>
+              <span class="carbon-value"><span data-carbon-value="car">—</span> g</span>
+            </div>
+            <div class="carbon-row">
+              <span class="carbon-name">Domestic flight</span>
+              <span class="carbon-track"><span class="carbon-bar" data-carbon-bar="plane"></span></span>
+              <span class="carbon-value"><span data-carbon-value="plane">—</span> g</span>
+            </div>
+          </div>
+          <p class="carbon-op">Operation only: <span data-carbon-op>—</span> g</p>
+          <p class="lab-note">Car, flight and international rail from the UK government’s 2025 factors, the flight counting the extra warming at altitude<sup class="cite"><a href="#src-desnz">13</a></sup>. Pioneer at 75% full on a 250 g/kWh grid, plus 58 t of CO₂ per km a year to build and maintain the line, a UIC estimate<sup class="cite"><a href="#src-eu">15</a></sup>.</p>
+          <p class="lab-trip"><span>A 204 km trip, one passenger</span> <span id="carbon-trip">—</span></p>
+          <details class="lab-more">
+            <summary><h3 class="lab-subhead">Did you know</h3></summary>
+            <ul class="facts">
+              <li>International rail is counted at 4.5 g per passenger-km, Britain’s national rail at 35 g<sup class="cite"><a href="#src-desnz">13</a></sup>: the grid behind the wire matters as much as the train.</li>
+              <li>Between Tokyo and Osaka, the Shinkansen uses about an eighth of an aircraft’s energy per seat, and puts out about a twelfth of its CO₂<sup class="cite"><a href="#src-jrar">2</a></sup>.</li>
+              <li>UIC finds that a new rail line pays back the CO₂ of its construction within one to three decades<sup class="cite"><a href="#src-uic">14</a></sup>.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div class="tab-panel" id="lab-panel-technology" role="tabpanel" aria-labelledby="lab-tab-technology" tabindex="0" hidden>
+          <p class="lab-caption">What makes the speed possible.</p>
+          <div class="tech-readouts">
+            <div class="tech-readout">
+              <span class="tech-value" data-tech="air">—</span>
+              <span class="tech-label">Air resistance, share of running energy</span>
+            </div>
+            <div class="tech-readout">
+              <span class="tech-value" data-tech="power">—</span>
+              <span class="tech-label">Power at the wheel to hold top speed</span>
+            </div>
+          </div>
+          <div class="tech-groups">
+            <section class="tech-group">
+              <h3 class="tech-head">The train</h3>
+              <dl class="tech-rows">
+                <div><dt>Nose</dt><dd>A long single arch keeps the air attached and the tunnel pressure gentle.</dd></div>
+                <div><dt>Body</dt><dd>Aluminium and composite: light on the axles, still stiff.</dd></div>
+                <div><dt>Seal</dt><dd>Sealed and pressure-managed: a tunnel is a change of air, not a thump.</dd></div>
+                <div><dt>Bogies</dt><dd>Welded frames, air springs and anti-roll bars: a steady, low ride.</dd></div>
+                <div><dt>Traction</dt><dd>25 kV, silicon-carbide converters and permanent-magnet motors: more speed, less weight and heat.</dd></div>
+                <div><dt>Braking</dt><dd>Motors return braking energy to the line; an eddy-current brake and carbon-ceramic discs, tested for the CR450, take the rest<sup class="cite"><a href="#src-rsw450">16</a></sup>.</dd></div>
+                <div><dt>Suspension</dt><dd>Active dampers cancel what the track sends up.</dd></div>
+                <div><dt>Tilt</dt><dd>Air springs lean the body slightly to hold speed through curves.</dd></div>
+              </dl>
+            </section>
+            <section class="tech-group">
+              <h3 class="tech-head">The line</h3>
+              <dl class="tech-rows">
+                <div><dt>Alignment</dt><dd>Curves gentle enough to stay comfortable at design speed.</dd></div>
+                <div><dt>Slab track</dt><dd>Concrete slab: little upkeep, no ballast to fly.</dd></div>
+                <div><dt>Viaducts</dt><dd>The line stays level; the ground below stays open.</dd></div>
+                <div><dt>Tunnels</dt><dd>Shaped portals keep the pressure wave gentle.</dd></div>
+                <div><dt>Catenary</dt><dd>Tensioned wire keeps the pantograph in contact in the wind.</dd></div>
+                <div><dt>Switches</dt><dd>High-speed turnouts, with no jolt at the crossing.</dd></div>
+                <div><dt>Fencing</dt><dd>Fenced, no level crossings: nothing else shares the track.</dd></div>
+              </dl>
+            </section>
+            <section class="tech-group">
+              <h3 class="tech-head">The systems</h3>
+              <dl class="tech-rows">
+                <div><dt>Signalling</dt><dd>ETCS Level 2: movement authority by radio, the permitted speed in the cab.</dd></div>
+                <div><dt>Automatic driving</dt><dd>Holds the timetable to the second; brakes earlier and softer.</dd></div>
+                <div><dt>Interlocking</dt><dd>Proves each route clear and locked before a train moves.</dd></div>
+                <div><dt>Radio</dt><dd>A dedicated network for signalling and voice.</dd></div>
+                <div><dt>Traffic management</dt><dd>Re-plans around a delay and gives the driver a new target.</dd></div>
+                <div><dt>Monitoring</dt><dd>Sensors report wear before it becomes a failure.</dd></div>
+                <div><dt>Power supply</dt><dd>Substations and auto-transformers hold the voltage as trains accelerate.</dd></div>
+              </dl>
+            </section>
+          </div>
+          <p class="lab-note">In service on the N700S in Japan<sup class="cite"><a href="#src-irj">8</a></sup>, the TGV M in France<sup class="cite"><a href="#src-alstom">9</a></sup> and the Velaro in Europe<sup class="cite"><a href="#src-velaro">7</a></sup>; China’s CR450, still in testing, brings several of them to 400 km/h<sup class="cite"><a href="#src-rg">6</a></sup>.</p>
+        </div>
+
+        <div class="tab-panel" id="lab-panel-world" role="tabpanel" aria-labelledby="lab-tab-world" tabindex="0" hidden>
+          <p class="lab-caption">Pioneer against lines in service; its row follows the controls.</p>
+          <div class="timetable-wrap">
+            <table class="timetable world">
+              <thead>
+                <tr>
+                  <th scope="col">Line</th>
+                  <th scope="col">Opened</th>
+                  <th scope="col">Length</th>
+                  <th scope="col">Top speed</th>
+                  <th scope="col">Fastest trip</th>
+                  <th scope="col">Average</th>
+                  <th scope="col">Trains</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="is-pioneer">
+                  <th scope="row">Pioneer<span class="world-where">Central–Horizon</span></th>
+                  <td>Building</td>
+                  <td>204 km</td>
+                  <td data-world="speed">—</td>
+                  <td class="is-text" data-world="trip">—</td>
+                  <td data-world="average">—</td>
+                  <td class="is-text" data-world="trains">—</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tōkaidō Shinkansen<sup class="cite"><a href="#src-jrc">1</a></sup><sup class="cite"><a href="#src-w-tk">34</a></sup><span class="world-where">Japan</span></th>
+                  <td>1964</td>
+                  <td>515 km</td>
+                  <td>285 km/h</td>
+                  <td class="is-text">Tokyo–Shin-Osaka, 2 h 21 min</td>
+                  <td>219 km/h</td>
+                  <td class="is-text">N700S</td>
+                </tr>
+                <tr>
+                  <th scope="row">LGV Sud-Est<sup class="cite"><a href="#src-w-se">35</a></sup><sup class="cite"><a href="#src-trbweb">18</a></sup><span class="world-where">France</span></th>
+                  <td>1981</td>
+                  <td>409 km</td>
+                  <td>300 km/h</td>
+                  <td class="is-text">Paris–Lyon, about 2 h</td>
+                  <td>—</td>
+                  <td class="is-text">TGV</td>
+                </tr>
+                <tr>
+                  <th scope="row">Cologne–Frankfurt<sup class="cite"><a href="#src-w-kf">36</a></sup><span class="world-where">Germany</span></th>
+                  <td>2002</td>
+                  <td>180 km</td>
+                  <td>300 km/h</td>
+                  <td class="is-text">About 62 min</td>
+                  <td>about 174 km/h</td>
+                  <td class="is-text">ICE 3, ICE 4</td>
+                </tr>
+                <tr>
+                  <th scope="row">Madrid–Barcelona<sup class="cite"><a href="#src-w-mb">37</a></sup><span class="world-where">Spain</span></th>
+                  <td>2008</td>
+                  <td>621 km</td>
+                  <td>300 km/h</td>
+                  <td class="is-text">2 h 30 min</td>
+                  <td>248 km/h</td>
+                  <td class="is-text">AVE S-103 and others</td>
+                </tr>
+                <tr>
+                  <th scope="row">Beijing–Shanghai<sup class="cite"><a href="#src-w-bs">38</a></sup><span class="world-where">China</span></th>
+                  <td>2011</td>
+                  <td>1,318 km</td>
+                  <td>350 km/h</td>
+                  <td class="is-text">4 h 18 min, two stops</td>
+                  <td>307 km/h</td>
+                  <td class="is-text">CR400 Fuxing</td>
+                </tr>
+                <tr>
+                  <th scope="row">Taiwan High Speed Rail<sup class="cite"><a href="#src-w-tw">39</a></sup><span class="world-where">Taiwan</span></th>
+                  <td>2007</td>
+                  <td>350 km</td>
+                  <td>300 km/h</td>
+                  <td class="is-text">Nangang–Zuoying, 1 h 45 min</td>
+                  <td>200 km/h</td>
+                  <td class="is-text">700T</td>
+                </tr>
+                <tr>
+                  <th scope="row">Gyeongbu<sup class="cite"><a href="#src-w-gb">40</a></sup><span class="world-where">South Korea</span></th>
+                  <td>2004</td>
+                  <td>387 km</td>
+                  <td>305 km/h</td>
+                  <td class="is-text">Seoul–Busan, 2 h 18 min</td>
+                  <td>—</td>
+                  <td class="is-text">KTX, SRT</td>
+                </tr>
+                <tr>
+                  <th scope="row">Al Boraq<sup class="cite"><a href="#src-w-kt">41</a></sup><span class="world-where">Morocco</span></th>
+                  <td>2018</td>
+                  <td>186 km</td>
+                  <td>320 km/h</td>
+                  <td class="is-text">Tangier–Casablanca, 2 h 10 min</td>
+                  <td>162 km/h</td>
+                  <td class="is-text">Euroduplex</td>
+                </tr>
+                <tr>
+                  <th scope="row">Haramain<sup class="cite"><a href="#src-w-hr">42</a></sup><span class="world-where">Saudi Arabia</span></th>
+                  <td>2018</td>
+                  <td>453 km</td>
+                  <td>300 km/h</td>
+                  <td class="is-text">Mecca–Medina, about 2 h</td>
+                  <td>about 225 km/h</td>
+                  <td class="is-text">Talgo 350 SRO</td>
+                </tr>
+                <tr>
+                  <th scope="row">Whoosh<sup class="cite"><a href="#src-w-jb">43</a></sup><span class="world-where">Indonesia</span></th>
+                  <td>2023</td>
+                  <td>143 km</td>
+                  <td>350 km/h</td>
+                  <td class="is-text">Jakarta–Bandung</td>
+                  <td>—</td>
+                  <td class="is-text">KCIC400AF</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="lab-note">Under 3½ hours station to station, rail usually wins more than half of the air-and-rail market<sup class="cite"><a href="#src-trb">17</a></sup>: Frankfurt–Cologne, 70 min, 99%; Paris–Lyon, 120 min, 88%<sup class="cite"><a href="#src-trbweb">18</a></sup>.</p>
+          <details class="lab-more">
+            <summary><h3 class="lab-subhead">Did you know</h3></summary>
+            <ul class="facts">
+              <li>Trains on the Tōkaidō Shinkansen were late by an average of 1.6 minutes in 2023, counting typhoons and earthquakes<sup class="cite"><a href="#src-jrc">1</a></sup>.</li>
+              <li>Since the Tōkaidō Shinkansen opened in 1964, no train accident on it has killed or injured a passenger on board<sup class="cite"><a href="#src-jrc">1</a></sup>.</li>
+              <li>Al Boraq runs at 320 km/h for the 186 km to Kenitra, then on the 137 km classic line to Casablanca<sup class="cite"><a href="#src-w-kt">41</a></sup>.</li>
+              <li>Whoosh, Jakarta–Bandung, is the first high-speed railway in Southeast Asia and in the Southern Hemisphere<sup class="cite"><a href="#src-w-jb">43</a></sup>.</li>
+              <li>Beijing–Shanghai’s fastest train averages about 307 km/h over 1,318 km, with two stops<sup class="cite"><a href="#src-w-bs">38</a></sup>.</li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <section class="lab-how wrap" aria-labelledby="how-title">
+        <details class="lab-more lab-more--how">
+        <summary><h2 id="how-title">How it works</h2></summary>
+        <p class="lab-note">Plain physics, not a simulation of a real train: each run pulls away as hard as grip and power allow, holds top speed, and brakes to the platform.</p>
+        <div class="how-grid">
+          <div>
+            <h3 class="lab-subhead">From the sources</h3>
+            <ul>
+              <li>Power: set so an eight-car train reaches 350 km/h in 4 min 40 s, as the CR450 does<sup class="cite"><a href="#src-rn">5</a></sup>. Longer trains carry the same share of powered cars.</li>
+              <li>Curves: banked by up to 180 mm, with up to 100 mm left unbalanced above 300 km/h<sup class="cite"><a href="#src-pk">10</a></sup>.</li>
+              <li>Fixed blocks: braking runs over four blocks<sup class="cite"><a href="#src-tvm">11</a></sup>.</li>
+              <li>CO₂e per passenger-km: car 167 g, flight 229 g, international rail 4.5 g<sup class="cite"><a href="#src-desnz">13</a></sup>. Construction and maintenance: 58 t of CO₂ per km a year<sup class="cite"><a href="#src-eu">15</a></sup>.</li>
+              <li>Checks: more often than the time from P to F, usually every half of it<sup class="cite"><a href="#src-rw">21</a></sup>.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="lab-subhead">Assumed</h3>
+            <ul>
+              <li>Starting acceleration 0.45 m/s²; service braking 0.55 m/s².</li>
+              <li>Air resistance from a drag area of 2.3 m² plus 0.65 m² a car; rolling resistance 0.15% of the weight.</li>
+              <li>Eight cars: 550 seats and 470 t; twelve: 830 and 690 t; sixteen: 1,100 and 920 t. Three seats in four taken, 80 kg a passenger.</li>
+              <li>85% of the energy from the wire reaches the wheels; 60% of the braking energy goes back; 0.4 MW for lights, air and doors.</li>
+              <li>Three minutes at each stop, fifteen to turn round; spares 15% of the trains in service; trains from 06:00 to midnight.</li>
+              <li>A grid at 250 g of CO₂ per kWh; an average trip of 110 km.</li>
+              <li>Moving block keeps 200 m behind the train ahead.</li>
+              <li>The health board: one bearing, on car 3 of train P04, starts to fail on day 8, its reading growing with the square of the days since. It can be seen at 6 °C above its pair (P), and a trackside detector trips at 30 °C (F). With sensors on every run it is watched from 6 °C and repaired at 10 °C; a depot check that finds it at 6 °C or more repairs it that night.</li>
+              <li>The prediction: a curve (a quadratic) fitted to the last seven readings while the bearing is failing, extended to 30 °C; its range is where the curve, with twice its standard error, crosses 30 °C.</li>
+              <li>The alarm: a healthy bearing reads 2 °C above its pair, give or take 2 °C, with each day’s reading independent of the last; 64 bearings a train, one reading each a day.</li>
+            </ul>
+          </div>
+        </div>
+        </details>
+      </section>
+
+      <section class="lab-closing wrap">
+        <a class="lab-back" href="/" data-service-link>Back to the service</a>
+
+        <div class="sources">
+          <details id="lab-sources">
+            <summary><h3>Sources</h3></summary>
+            <ol>
+              <li id="src-jrc"><a href="https://global.jr-central.co.jp/en/company/about_shinkansen" rel="noopener">JR Central, About the Tōkaidō Shinkansen</a></li>
+              <li id="src-jrar"><a href="https://global.jr-central.co.jp/en/company/ir/annualreport/_pdf/annualreport2025-13.pdf" rel="noopener">JR Central, Annual Report 2025: the Tōkaidō Shinkansen</a></li>
+              <li id="src-jrar17"><a href="https://global.jr-central.co.jp/en/company/ir/annualreport/_pdf/annualreport2025-17.pdf" rel="noopener">JR Central, Annual Report 2025: research and development</a></li>
+              <li id="src-rsw"><a href="https://rollingstockworld.com/passenger-cars/jr-central-and-jr-west-to-retire-high-speed-inspection-trains-after-2027/" rel="noopener">Rolling Stock World, JR Central and JR West to retire their inspection trains</a></li>
+              <li id="src-rn"><a href="https://railway-news.com/china-cr450-electric-train-sets-new-speed-records/" rel="noopener">Railway-News, China’s CR450 sets new speed records</a></li>
+              <li id="src-rg"><a href="https://www.railwaygazette.com/passenger/2025/06/19/china-high-speed-family-gets-ready-to-move-faster/" rel="noopener">Railway Gazette, China’s high-speed family gets ready to move faster</a></li>
+              <li id="src-velaro"><a href="https://assets.new.siemens.com/siemens/assets/api/uuid:c993a507-4e7c-406f-b644-9a9641b8a639/factsheet-high-speed-trainset-velaro-e.pdf" rel="noopener">Siemens, Velaro D high-speed trainset (factsheet)</a></li>
+              <li id="src-irj"><a href="https://www.railjournal.com/in_depth/new-traction-system-n700s/" rel="noopener">International Railway Journal, New traction system at the heart of N700S</a></li>
+              <li id="src-alstom"><a href="https://www.alstom.com/press-releases-news/2026/11/alstom-reinforces-its-global-high-speed-rail-leadership-new-generation-tgv-enters-commercial-service" rel="noopener">Alstom, TGV M enters commercial service</a></li>
+              <li id="src-pk"><a href="https://problemykolejnictwa.pl/images/PDF/204_4E.pdf" rel="noopener">Problemy Kolejnictwa 204, track geometry for high-speed lines under the EU rules (cant and cant deficiency)</a></li>
+              <li id="src-tvm"><a href="https://en.wikipedia.org/wiki/Transmission_voie-machine" rel="noopener">Wikipedia, Transmission voie-machine</a></li>
+              <li id="src-ec"><a href="https://transport.ec.europa.eu/transport-modes/rail/ertms/what-ertms-and-how-does-it-work/etcs-levels-and-modes_en" rel="noopener">European Commission, ETCS levels and modes</a></li>
+              <li id="src-desnz"><a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2025" rel="noopener">UK Department for Energy Security and Net Zero, Greenhouse gas reporting: conversion factors 2025</a></li>
+              <li id="src-uic"><a href="https://uic.org/activities/carbon-footprint-and-sustainability" rel="noopener">UIC, Carbon footprint and sustainability</a></li>
+              <li id="src-eu"><a href="https://rail-research.europa.eu/wp-content/uploads/2023/01/HSR_Technical_Report_2_Final_220123.pdf" rel="noopener">EY for Europe’s Rail Joint Undertaking, Smart and affordable rail services in the EU: high speed in 2030 and 2050, technical report 2 (2023)</a></li>
+              <li id="src-rsw450"><a href="https://rollingstockworld.com/passenger-cars/china-develops-cr450-emu-with-the-highest-operating-speed-in-the-world/" rel="noopener">Rolling Stock World, China develops CR450 EMU with the highest operating speed in the world (2023)</a></li>
+              <li id="src-trb"><a href="https://trid.trb.org/View/1130569" rel="noopener">Transportation Research Board, Quantifying the scale of air/rail complementarity and air/rail competition in Europe and the United States</a></li>
+              <li id="src-trbweb"><a href="https://onlinepubs.trb.org/Onlinepubs/webinars/160609.pdf" rel="noopener">Transportation Research Board, webinar on air and rail (rail’s share of the air-and-rail market)</a></li>
+              <li id="src-aar"><a href="https://www.aar.org/wayside-detectors/" rel="noopener">Association of American Railroads, What are wayside detectors?</a></li>
+              <li id="src-pf"><a href="https://reliamag.com/topics/articles/what-is-a-p-f-curve" rel="noopener">Reliable Media, What is a P-F curve?</a></li>
+              <li id="src-rw"><a href="https://reliabilityweb.com/articles/entry/rcm-on-condition-task-interval-determination" rel="noopener">Reliabilityweb, RCM: on-condition task interval determination</a></li>
+              <li id="src-jtsb"><a href="https://jtsb.mlit.go.jp/eng-rail_report/English/RI2019-1-1e.pdf" rel="noopener">Japan Transport Safety Board, Railway serious incident investigation report RI2019-1: the bogie crack on Nozomi 34</a></li>
+              <li id="src-ntsb"><a href="https://www.ntsb.gov/investigations/AccidentReports/Reports/RIR2405%20CORRECTED.pdf" rel="noopener">NTSB, Railroad investigation report RIR-24-05: Norfolk Southern derailment, East Palestine, Ohio</a></li>
+              <li id="src-w-es"><a href="https://en.wikipedia.org/wiki/Eschede_train_disaster" rel="noopener">Wikipedia, Eschede train disaster</a></li>
+              <li id="src-w-rcm"><a href="https://en.wikipedia.org/wiki/Reliability-centered_maintenance" rel="noopener">Wikipedia, Reliability-centered maintenance</a></li>
+              <li id="src-w-prog"><a href="https://en.wikipedia.org/wiki/Prognostics" rel="noopener">Wikipedia, Prognostics</a></li>
+              <li id="src-hitachi"><a href="https://news.hitachirail.com/hitachi-rail-boosts-maintenance-offer-as-it-completes-acquisition-of-digital-tech-firm-perpetuum-3086892" rel="noopener">Hitachi Rail, Hitachi Rail boosts maintenance offer as it completes acquisition of Perpetuum (2021)</a></li>
+              <li id="src-cd17"><a href="https://global.chinadaily.com.cn/a/201706/27/WS59bbf452a310ded8ac18f693.html" rel="noopener">China Daily, on the launch of the Fuxing trains (June 2017)</a></li>
+              <li id="src-cd22"><a href="https://www.chinadaily.com.cn/a/202201/07/WS61d799a9a310cdd39bc7facd.html" rel="noopener">China Daily, Bullet train service for Olympics makes debut trip (2022)</a></li>
+              <li id="src-xinhua"><a href="https://ydyl.gansu.gov.cn/enggsydyl/news/topnews/202502/t20250207_25086.html" rel="noopener">Xinhua, High-tech inspections bolster high-speed rail safety amid Spring Festival rush (2025)</a></li>
+              <li id="src-cgtn"><a href="https://news.cgtn.com/news/2026-02-13/How-robots-diagnose-high-speed-trains-during-Spring-Festival-rush-1KIVyl4SDjq/p.html" rel="noopener">CGTN, How robots diagnose high-speed trains during the Spring Festival rush (2026)</a></li>
+              <li id="src-w-dy"><a href="https://en.wikipedia.org/wiki/Doctor_Yellow" rel="noopener">Wikipedia, Doctor Yellow</a></li>
+              <li id="src-w-sk"><a href="https://en.wikipedia.org/wiki/Shinkansen" rel="noopener">Wikipedia, Shinkansen</a></li>
+              <li id="src-w-tk"><a href="https://en.wikipedia.org/wiki/T%C5%8Dkaid%C5%8D_Shinkansen" rel="noopener">Wikipedia, Tōkaidō Shinkansen</a></li>
+              <li id="src-w-se"><a href="https://en.wikipedia.org/wiki/LGV_Sud-Est" rel="noopener">Wikipedia, LGV Sud-Est</a></li>
+              <li id="src-w-kf"><a href="https://en.wikipedia.org/wiki/Cologne%E2%80%93Frankfurt_high-speed_rail_line" rel="noopener">Wikipedia, Cologne–Frankfurt high-speed rail line</a></li>
+              <li id="src-w-mb"><a href="https://en.wikipedia.org/wiki/Madrid%E2%80%93Barcelona_high-speed_rail_line" rel="noopener">Wikipedia, Madrid–Barcelona high-speed rail line</a></li>
+              <li id="src-w-bs"><a href="https://en.wikipedia.org/wiki/Beijing%E2%80%93Shanghai_high-speed_railway" rel="noopener">Wikipedia, Beijing–Shanghai high-speed railway</a></li>
+              <li id="src-w-tw"><a href="https://en.wikipedia.org/wiki/Taiwan_High_Speed_Rail" rel="noopener">Wikipedia, Taiwan High Speed Rail</a></li>
+              <li id="src-w-gb"><a href="https://en.wikipedia.org/wiki/Gyeongbu_high-speed_railway" rel="noopener">Wikipedia, Gyeongbu high-speed railway</a></li>
+              <li id="src-w-kt"><a href="https://en.wikipedia.org/wiki/Kenitra%E2%80%93Tangier_high-speed_rail_line" rel="noopener">Wikipedia, Kenitra–Tangier high-speed rail line</a></li>
+              <li id="src-w-hr"><a href="https://en.wikipedia.org/wiki/Haramain_High-Speed_Railway" rel="noopener">Wikipedia, Haramain High-Speed Railway</a></li>
+              <li id="src-w-jb"><a href="https://en.wikipedia.org/wiki/Jakarta%E2%80%93Bandung_high-speed_railway" rel="noopener">Wikipedia, Jakarta–Bandung high-speed railway</a></li>
+            </ol>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer wrap">
+      <p>
+        Pioneer is the high-speed service of the city. The city is at <a href="https://rogerluo.org/">rogerluo.org</a>.
+      </p>
+      <p>© Roger Luo · together, onward</p>
+    </footer>
+
+    <script type="application/json" id="lab-strings">{"title":"High-speed rail lab: the Frontier line","description":"Change the timetable of the Frontier line and see what it does to journey time, capacity, energy and carbon, then compare it with high-speed lines around the world.","eyebrow":"Frontier line · Lab","heading":"Run the line.","lede":"Change the timetable and the line answers: trip time, seats, energy and carbon.","nav":"Lab","serviceNav":"← The service","controls":{"speed":"Top speed","stops":"Stops","frequency":"Trains an hour","length":"Train length","eachWay":"each way"},"stopOptions":{"all":"All three","two":"Meridian and Horizon","express":"Non-stop"},"readouts":{"time":"Central to Horizon","seats":"Seats an hour","energy":"Energy per seat-km","carbon":"CO₂ per passenger-km"},"units":{"minutes":"min","seats":"seats","wh":"Wh","grams":"g","cars":"cars","megawatts":"MW","km":"km","kmh":"km/h","seconds":"s"},"line":{"caption":"Speed along the line, Central to Horizon.","aria":"Speed along the Frontier line","survey":"New Horizon"},"tabs":{"timetable":"Timetable","physics":"Physics","signalling":"Signalling","fleet":"Fleet","health":"Vehicle health management","carbon":"Carbon","technology":"Technology","world":"Around the world"},"factsTitle":"Did you know","timetable":{"caption":"Departures from Central.","heads":["Central","Foundry","Meridian","Horizon"],"skipped":"—","note":"Three minutes at each stop, and fifteen to turn round at each end."},"physics":{"caption":"The numbers behind the timetable.","rows":{"power":"Power of the train","accelerate":"To reach top speed","brake":"To stop from top speed","curve":"Tightest curve at top speed","climb":"Steepest climb it holds top speed on","energy":"Energy for one run, Central to Horizon","regen":"Given back by braking","mass":"Loaded train"},"note":"Power: an eight-car train reaches 350 km/h in 4 min 40 s, as the CR450 does{rn}; a 200 m Velaro D has 8,000 kW{velaro}. Curves: banked up to 180 mm, with up to 100 mm unbalanced above 300 km/h{pk}.","facts":["The CR450 is about 50 tonnes lighter and 20 cm lower than the Fuxing trains before it, and reaches 350 km/h about 100 seconds sooner{rn}.","The CR450 is built for 450 km/h and is to run at 400; its brakes stop it in about the distance a slower train needs{rg}.","Cologne–Frankfurt climbs grades of up to 4%, steep for a main line. It can, because only passenger trains use it{w-kf}."]},"signalling":{"caption":"At high speed the signal comes into the cab{tvm}. How close can two trains run?","rows":{"brake":"To stop from top speed","block":"One block, if braking takes four","fixed":"Closest gap at top speed, fixed blocks","moving":"Closest gap at top speed, moving block","timetable":"Your timetable"},"every":"a train every {min} min","diagram":{"fixed":"Fixed blocks","moving":"Moving block","ahead":"Train ahead","behind":"Following train","braking":"braking distance","margin":"margin"},"note":"Fixed blocks: the train behind must stop short of the occupied block, and braking runs over about four{tvm}. Moving block: it follows the tail ahead, at braking distance plus a margin.","systemsTitle":"Who uses what","systems":[["ETCS Level 2","Movement authority by radio and the permitted speed in the cab; lineside signals are optional. Since 2023 the EU counts moving block as part of Level 2{ec}.","Madrid–Barcelona{w-mb}; coming to LGV Sud-Est{w-se} and to Cologne–Frankfurt in 2028{w-kf}. Pioneer runs on it, with automatic train operation."],["TVM","France’s cab signalling. The line is cut into blocks of about 1,500 m, and the cab shows the permitted speed{tvm}.","LGV Sud-Est (TVM-300){w-se}; Gyeongbu in Korea (TVM 430){w-gb}"],["LZB","Germany’s continuous cab signalling.","Cologne–Frankfurt, until ETCS Level 2 in 2028{w-kf}"],["CTCS-3","China’s train control: on Beijing–Shanghai it allows running at up to 380 km/h{w-bs}.","Beijing–Shanghai{w-bs}; Jakarta–Bandung{w-jb}"],["Digital ATC","Japan’s cab signalling; on the Tōkaidō Shinkansen, ATC-NS{w-tk}.","Tōkaidō Shinkansen{w-tk}"]],"facts":["TVM blocks are about 1,500 m on open line, and a tenth of that in the Channel Tunnel’s terminal areas{tvm}.","The Tōkaidō Shinkansen runs up to 12 Nozomi an hour each way{jrar}."]},"fleet":{"caption":"The trains it takes to run the timetable.","rows":{"inService":"Trains in service","spares":"Spares","km":"Each train runs, a day","cycle":"Round trip, with turn-rounds"},"note":"Spares cover the trains at the depot.","facts":["The Shinkansen shuts down between midnight and 06:00 every day for maintenance{w-sk}.","China runs 1,644 Fuxing trainsets{rg}."]},"health":{"caption":"Catch a fault while it is still a trend, and send the train to the depot before it fails.","pf":"A fault can first be detected at P, some time before the part fails at F{pf}. The usual rule: check at least every half of that interval{rw}.","boardTitle":"Health board","day":"Day","checks":"Bearings checked every","plans":[{"value":"run","label":"Run"},{"value":"3","label":"3 days"},{"value":"7","label":"7 days"},{"value":"30","label":"30 days"}],"rows":{"p":"First seen (P)","f":"Would fail (F)","every":"Check at least every","plan":"This plan","predict":"Predicted from the trend"},"values":{"p":"Day {day}, at {v} °C above its pair","f":"Day {day}, when a trackside detector would stop it","every":"{half} days: half of the {pf} from P to F","seen":"Seen on day {day}, {days} days before it would fail","worst":". Had the checks fallen on other days, as little as {days}","worstMissed":". Had the checks fallen on other days, it could have been missed","missed":"Missed: a trackside detector stops the train on the line on day {day}","predict":"On day {made}: it would fail on day {day}, between day {lo} and {hi}","predictLater":"On day {made}: it would fail after day 30","predictWait":"Nothing to predict yet: it reads like the others","predictSparse":"Needs a reading on every run"},"chart":{"aria":"One bearing’s temperature over the month, against the watch, repair and detector levels","title":"P04, a bearing on car 3, °C above its pair","watch":"Watch","repair":"Repair","detector":"Detector","measured":"Measured","unmeasured":"Not measured","predicted":"Predicted","today":"Today"},"heads":["Train","Bearings","Wheels","Pantograph","Status"],"status":{"ok":"In service","watch":"Watch","swap":"Repair tonight","depot":"At depot","spare":"Spare","failed":"Stopped on the line"},"cells":{"bearing":"+{v} °C","wheel":"{v} mm","strip":"{v} mm"},"cellsAria":{"bearing":"warmer than its pair","wheel":"of wheel wear","strip":"of carbon strip left"},"notMeasured":"not measured today","log":"Log","quiet":"Nothing to report yet.","events":{"watch":"Day {day} · {train}: a bearing on car 3 is running {delta} °C warmer than its pair. Watch it.","swap":"Day {day} · {train}: the trend holds. To the depot tonight; {spare} takes its runs.","found":"Day {day} · {train}: tonight’s depot check finds a bearing on car 3 running {delta} °C warmer than its pair. Changed tonight; {spare} takes its runs.","repaired":"Day {day} · {train}: bearing changed. Back as a spare.","wheel":"Day {day} · {train}: wheels near their wear limit. Re-profiled at the depot tonight.","strip":"Day {day} · {train}: pantograph strip worn. Changed at the depot tonight.","detector":"Day {day} · {train}: a trackside hot-axle detector near Meridian trips. The train stops on the line; its passengers move to the next train."},"how":"Sensors on every run see the trend days early. Depot checks find it only if one falls between P and F. Every 30 days, a trackside detector finds it hot, with passengers aboard.","boardNote":"Illustrative: the fleet and its faults are made up.","alarmTitle":"Set the alarm","alarm":"Set it low and faults are caught early, but healthy bearings trip it too. Ask for readings in a row and the noise cancels, but the warning comes later.","level":"Alarm at","levels":[6,10,15,20],"inRow":"Readings in a row","rowsInRow":[1,2,3],"warning":"Warning before it would fail","falseAlarms":"False alarms a year, whole fleet","days":"{n} days","noWarning":"None","fewer":"Fewer than 1","perDay":"{n}, about {d} a day","alarmNote":"The same failing bearing as on the board, and {bearings} healthy bearings, each read once a day.","watchTitle":"What is watched","watched":[["Axle bearings","Overheat, then seize.","Temperature and vibration sensors on the bogie as the train runs; heat and acoustic detectors beside the track. Microphones can hear damage inside a bearing, often well before it is hot enough to set off a temperature alarm{aar}."],["Wheels","Flat spots, out of round, a worn profile.","Detectors built into the track measure how hard each wheel hits the rail; lasers and cameras measure its shape and wear{aar}. Worn wheels are turned back to shape at the depot."],["Bogie frame","Fatigue cracks.","Ultrasonic testing at the bogie and general inspections; and, in Japan since 2017, air-spring pressures and bogie temperatures watched for change as the train runs{jtsb}."],["Pantograph","A worn carbon strip.","Cameras and sensors at the depot entrance inspect the outside of every car as it rolls in{jrar17}; on the board, a strip is changed at 5 mm."],["Traction","A converter fails.","Built so one failure is not a stop: a Velaro D has four independent converters and still reaches its destination on 75% of its power if one fails{velaro}."]],"answersTitle":"Five answers","answersIntro":"Reliability-centred maintenance gives each way a part can fail one of five answers{w-rcm}:","answers":[["Predictive","Watch the condition and act on the trend: the bearing sensors on the board."],["Preventive","Restore or replace on a schedule, by time or distance, where a part wears out at a predictable age."],["Detective","Test what only fails when it is needed, such as a standby system, before it is needed."],["Run to failure","Let it fail, where failure is cheap and safe: a reading light."],["One-time change","Change the design when no task can make it safe. After Eschede, every wheel of the failed design was replaced with a one-piece wheel within weeks{w-es}."]],"changingTitle":"What is changing","changing":[["Prediction, not only detection","Prognostics estimates how long a part has left, its remaining useful life, as a range that narrows as readings come in. Its methods learn from data, model the physics of the damage, or combine both{w-prog}. On the board, with a reading on every run, the dashed line ahead of the bearing is that estimate."],["Sensors that power themselves","Wireless sensors on the bogie run on the train’s own vibration, with no batteries or wiring, so an older fleet can be watched on every run too. Hitachi Rail says parts replaced on condition last more than 25% longer, and that none of the 3,000-plus carriages fitted has had a critical component fail in service{hitachi}."],["Thousands of sensors a train","China’s Fuxing trains carry more than 2,500 sensors, watching bearing temperatures, brakes and the cabin; when something is wrong, the train can slow down or stop by itself{cd17}. The smart Fuxing built for the 2022 Winter Olympics has 2,700{cd22}."],["Compared with its neighbours","A reading means more beside others taken at the same moment. Norfolk Southern’s detectors raise an alert for a bearing much warmer than the others on the same side of the train, or on the same car, even below the absolute limit{ntsb}. The board compares each bearing with its pair on the axle."],["Every train an inspection train","Doctor Yellow, the Shinkansen’s yellow inspection train, measured the track and overhead wire at up to 270 km/h{w-dy}. JR Central retired its set in January 2025; the work is moving to sensors and cameras on ordinary N700S trains{rsw}{jrar17}."],["Robots under the train","At Nanjing South, robots with two camera arms scan a high-speed train’s underside, and AI flags what they find. By hand, a standard train needs at least two inspectors for two and a half hours; with the robots, an hour and a ten-minute review{xinhua}. At Zhanjiang North depot, a robot arm tests hollow axles by ultrasound for cracks of a millimetre{cgtn}."]],"facts":["Reliability-centred maintenance began with airlines: a 1978 report by United Airlines engineers for the US Department of Defense. Its starting point was that the old idea of a fixed safe life for every part was wrong in nearly every example in a modern jet airliner{w-rcm}.","Vibration analysis can find a defect in a bearing’s inner race about 12 weeks before the bearing seizes; check it every 6 weeks or more often{pf}.","In December 2017 the crew of Nozomi 34 noticed an unusual smell and noise from under the floor soon after leaving Hakata. The train ran on for over three hours; at Nagoya, staff found a crack 146 mm deep in a bogie side beam 170 mm high, with about 1,000 passengers aboard{jtsb}.","On that train’s previous run, trackside detectors had recorded the bogie warmer than usual, but under the alarm level; and the air-spring pressures logged on the train show the crack was probably weakening the frame the day before{jtsb}.","Afterwards JR Central went from two trackside bogie-temperature detectors between Tokyo and Shin-Osaka to five, and began judging each bogie by how its temperature changes, not only by a limit. JR West told its staff: do not hesitate to stop the train when safety cannot be confirmed{jtsb}.","In February 2023, three trackside detectors read a freight car’s bearing at 38, then 103, then 253 °F above the air (about 21, 57 and 141 °C) in 75 minutes. Only the last crossed the 170 °F level at which a detector radios the crew; the train derailed minutes later at East Palestine, Ohio{ntsb}.","The NTSB found that a failing bearing is likely hotter inside than a trackside detector can measure from outside{ntsb}.","Before the Eschede derailment in 1998, which killed 101 people, the ICE’s wheel tyres were inspected by eye with torches; testing machines used earlier had been dropped for raising too many false alarms. In the two months before, staff filed eight complaints about noise and vibration from the bogie{w-es}.","In China, an eight-car high-speed train is inspected every three days in service, a check of more than 10,000 components{xinhua}."]},"carbon":{"caption":"Grams of CO₂ per passenger-kilometre, on the same trip.","pioneer":"Pioneer","eurostar":"International rail","car":"Car, one person","plane":"Domestic flight","operation":"Operation only","construction":"Including the line's construction","note":"Car, flight and international rail from the UK government’s 2025 factors, the flight counting the extra warming at altitude{desnz}. Pioneer at 75% full on a 250 g/kWh grid, plus 58 t of CO₂ per km a year to build and maintain the line, a UIC estimate{eu}.","trip":"A 204 km trip, one passenger","perTrip":"kg","facts":["International rail is counted at 4.5 g per passenger-km, Britain’s national rail at 35 g{desnz}: the grid behind the wire matters as much as the train.","Between Tokyo and Osaka, the Shinkansen uses about an eighth of an aircraft’s energy per seat, and puts out about a twelfth of its CO₂{jrar}.","UIC finds that a new rail line pays back the CO₂ of its construction within one to three decades{uic}."]},"technology":{"caption":"What makes the speed possible.","atSpeed":"At this speed","air":"Air resistance, share of running energy","power":"Power at the wheel to hold top speed","groups":[{"label":"The train","rows":[["Nose","A long single arch keeps the air attached and the tunnel pressure gentle."],["Body","Aluminium and composite: light on the axles, still stiff."],["Seal","Sealed and pressure-managed: a tunnel is a change of air, not a thump."],["Bogies","Welded frames, air springs and anti-roll bars: a steady, low ride."],["Traction","25 kV, silicon-carbide converters and permanent-magnet motors: more speed, less weight and heat."],["Braking","Motors return braking energy to the line; an eddy-current brake and carbon-ceramic discs, tested for the CR450, take the rest{rsw450}."],["Suspension","Active dampers cancel what the track sends up."],["Tilt","Air springs lean the body slightly to hold speed through curves."]]},{"label":"The line","rows":[["Alignment","Curves gentle enough to stay comfortable at design speed."],["Slab track","Concrete slab: little upkeep, no ballast to fly."],["Viaducts","The line stays level; the ground below stays open."],["Tunnels","Shaped portals keep the pressure wave gentle."],["Catenary","Tensioned wire keeps the pantograph in contact in the wind."],["Switches","High-speed turnouts, with no jolt at the crossing."],["Fencing","Fenced, no level crossings: nothing else shares the track."]]},{"label":"The systems","rows":[["Signalling","ETCS Level 2: movement authority by radio, the permitted speed in the cab."],["Automatic driving","Holds the timetable to the second; brakes earlier and softer."],["Interlocking","Proves each route clear and locked before a train moves."],["Radio","A dedicated network for signalling and voice."],["Traffic management","Re-plans around a delay and gives the driver a new target."],["Monitoring","Sensors report wear before it becomes a failure."],["Power supply","Substations and auto-transformers hold the voltage as trains accelerate."]]}],"note":"In service on the N700S in Japan{irj}, the TGV M in France{alstom} and the Velaro in Europe{velaro}; China’s CR450, still in testing, brings several of them to 400 km/h{rg}."},"world":{"caption":"Pioneer against lines in service; its row follows the controls.","heads":["Line","Opened","Length","Top speed","Fastest trip","Average","Trains"],"pioneer":{"name":"Pioneer","where":"Central–Horizon","opened":"Building","trip":"Central–Horizon, {time}","trains":"{cars} cars"},"about":"about","rows":[{"name":"Tōkaidō Shinkansen","where":"Japan","opened":1964,"km":515,"speed":285,"trip":"Tokyo–Shin-Osaka, 2 h 21 min","minutes":141,"tripKm":515.4,"trains":"N700S","cite":["jrc","w-tk"]},{"name":"LGV Sud-Est","where":"France","opened":1981,"km":409,"speed":300,"trip":"Paris–Lyon, about 2 h","minutes":120,"trains":"TGV","cite":["w-se","trbweb"]},{"name":"Cologne–Frankfurt","where":"Germany","opened":2002,"km":180,"speed":300,"trip":"About 62 min","minutes":62,"tripKm":180,"approx":true,"trains":"ICE 3, ICE 4","cite":["w-kf"]},{"name":"Madrid–Barcelona","where":"Spain","opened":2008,"km":621,"speed":300,"trip":"2 h 30 min","minutes":150,"tripKm":621,"trains":"AVE S-103 and others","cite":["w-mb"]},{"name":"Beijing–Shanghai","where":"China","opened":2011,"km":1318,"speed":350,"trip":"4 h 18 min, two stops","minutes":258,"tripKm":1318,"trains":"CR400 Fuxing","cite":["w-bs"]},{"name":"Taiwan High Speed Rail","where":"Taiwan","opened":2007,"km":350,"speed":300,"trip":"Nangang–Zuoying, 1 h 45 min","minutes":105,"tripKm":350,"trains":"700T","cite":["w-tw"]},{"name":"Gyeongbu","where":"South Korea","opened":2004,"km":387,"speed":305,"trip":"Seoul–Busan, 2 h 18 min","minutes":138,"trains":"KTX, SRT","cite":["w-gb"]},{"name":"Al Boraq","where":"Morocco","opened":2018,"km":186,"speed":320,"trip":"Tangier–Casablanca, 2 h 10 min","minutes":130,"tripKm":350,"trains":"Euroduplex","cite":["w-kt"]},{"name":"Haramain","where":"Saudi Arabia","opened":2018,"km":453,"speed":300,"trip":"Mecca–Medina, about 2 h","minutes":120,"tripKm":449,"approx":true,"trains":"Talgo 350 SRO","cite":["w-hr"]},{"name":"Whoosh","where":"Indonesia","opened":2023,"km":143,"speed":350,"trip":"Jakarta–Bandung","trains":"KCIC400AF","cite":["w-jb"]}],"rule":"Under 3½ hours station to station, rail usually wins more than half of the air-and-rail market{trb}: Frankfurt–Cologne, 70 min, 99%; Paris–Lyon, 120 min, 88%{trbweb}.","facts":["Trains on the Tōkaidō Shinkansen were late by an average of 1.6 minutes in 2023, counting typhoons and earthquakes{jrc}.","Since the Tōkaidō Shinkansen opened in 1964, no train accident on it has killed or injured a passenger on board{jrc}.","Al Boraq runs at 320 km/h for the 186 km to Kenitra, then on the 137 km classic line to Casablanca{w-kt}.","Whoosh, Jakarta–Bandung, is the first high-speed railway in Southeast Asia and in the Southern Hemisphere{w-jb}.","Beijing–Shanghai’s fastest train averages about 307 km/h over 1,318 km, with two stops{w-bs}."]},"how":{"title":"How it works","intro":"Plain physics, not a simulation of a real train: each run pulls away as hard as grip and power allow, holds top speed, and brakes to the platform.","sourced":"From the sources","sourcedItems":["Power: set so an eight-car train reaches 350 km/h in 4 min 40 s, as the CR450 does{rn}. Longer trains carry the same share of powered cars.","Curves: banked by up to 180 mm, with up to 100 mm left unbalanced above 300 km/h{pk}.","Fixed blocks: braking runs over four blocks{tvm}.","CO₂e per passenger-km: car 167 g, flight 229 g, international rail 4.5 g{desnz}. Construction and maintenance: 58 t of CO₂ per km a year{eu}.","Checks: more often than the time from P to F, usually every half of it{rw}."],"assumed":"Assumed","assumedItems":["Starting acceleration 0.45 m/s²; service braking 0.55 m/s².","Air resistance from a drag area of 2.3 m² plus 0.65 m² a car; rolling resistance 0.15% of the weight.","Eight cars: 550 seats and 470 t; twelve: 830 and 690 t; sixteen: 1,100 and 920 t. Three seats in four taken, 80 kg a passenger.","85% of the energy from the wire reaches the wheels; 60% of the braking energy goes back; 0.4 MW for lights, air and doors.","Three minutes at each stop, fifteen to turn round; spares 15% of the trains in service; trains from 06:00 to midnight.","A grid at 250 g of CO₂ per kWh; an average trip of 110 km.","Moving block keeps 200 m behind the train ahead.","The health board: one bearing, on car 3 of train P04, starts to fail on day 8, its reading growing with the square of the days since. It can be seen at 6 °C above its pair (P), and a trackside detector trips at 30 °C (F). With sensors on every run it is watched from 6 °C and repaired at 10 °C; a depot check that finds it at 6 °C or more repairs it that night.","The prediction: a curve (a quadratic) fitted to the last seven readings while the bearing is failing, extended to 30 °C; its range is where the curve, with twice its standard error, crosses 30 °C.","The alarm: a healthy bearing reads 2 °C above its pair, give or take 2 °C, with each day’s reading independent of the last; 64 bearings a train, one reading each a day."]},"sourcesTitle":"Sources","sources":[{"id":"jrc","label":"JR Central, About the Tōkaidō Shinkansen","href":"https://global.jr-central.co.jp/en/company/about_shinkansen"},{"id":"jrar","label":"JR Central, Annual Report 2025: the Tōkaidō Shinkansen","href":"https://global.jr-central.co.jp/en/company/ir/annualreport/_pdf/annualreport2025-13.pdf"},{"id":"jrar17","label":"JR Central, Annual Report 2025: research and development","href":"https://global.jr-central.co.jp/en/company/ir/annualreport/_pdf/annualreport2025-17.pdf"},{"id":"rsw","label":"Rolling Stock World, JR Central and JR West to retire their inspection trains","href":"https://rollingstockworld.com/passenger-cars/jr-central-and-jr-west-to-retire-high-speed-inspection-trains-after-2027/"},{"id":"rn","label":"Railway-News, China’s CR450 sets new speed records","href":"https://railway-news.com/china-cr450-electric-train-sets-new-speed-records/"},{"id":"rg","label":"Railway Gazette, China’s high-speed family gets ready to move faster","href":"https://www.railwaygazette.com/passenger/2025/06/19/china-high-speed-family-gets-ready-to-move-faster/"},{"id":"velaro","label":"Siemens, Velaro D high-speed trainset (factsheet)","href":"https://assets.new.siemens.com/siemens/assets/api/uuid:c993a507-4e7c-406f-b644-9a9641b8a639/factsheet-high-speed-trainset-velaro-e.pdf"},{"id":"irj","label":"International Railway Journal, New traction system at the heart of N700S","href":"https://www.railjournal.com/in_depth/new-traction-system-n700s/"},{"id":"alstom","label":"Alstom, TGV M enters commercial service","href":"https://www.alstom.com/press-releases-news/2026/11/alstom-reinforces-its-global-high-speed-rail-leadership-new-generation-tgv-enters-commercial-service"},{"id":"pk","label":"Problemy Kolejnictwa 204, track geometry for high-speed lines under the EU rules (cant and cant deficiency)","href":"https://problemykolejnictwa.pl/images/PDF/204_4E.pdf"},{"id":"tvm","label":"Wikipedia, Transmission voie-machine","href":"https://en.wikipedia.org/wiki/Transmission_voie-machine"},{"id":"ec","label":"European Commission, ETCS levels and modes","href":"https://transport.ec.europa.eu/transport-modes/rail/ertms/what-ertms-and-how-does-it-work/etcs-levels-and-modes_en"},{"id":"desnz","label":"UK Department for Energy Security and Net Zero, Greenhouse gas reporting: conversion factors 2025","href":"https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2025"},{"id":"uic","label":"UIC, Carbon footprint and sustainability","href":"https://uic.org/activities/carbon-footprint-and-sustainability"},{"id":"eu","label":"EY for Europe’s Rail Joint Undertaking, Smart and affordable rail services in the EU: high speed in 2030 and 2050, technical report 2 (2023)","href":"https://rail-research.europa.eu/wp-content/uploads/2023/01/HSR_Technical_Report_2_Final_220123.pdf"},{"id":"rsw450","label":"Rolling Stock World, China develops CR450 EMU with the highest operating speed in the world (2023)","href":"https://rollingstockworld.com/passenger-cars/china-develops-cr450-emu-with-the-highest-operating-speed-in-the-world/"},{"id":"trb","label":"Transportation Research Board, Quantifying the scale of air/rail complementarity and air/rail competition in Europe and the United States","href":"https://trid.trb.org/View/1130569"},{"id":"trbweb","label":"Transportation Research Board, webinar on air and rail (rail’s share of the air-and-rail market)","href":"https://onlinepubs.trb.org/Onlinepubs/webinars/160609.pdf"},{"id":"aar","label":"Association of American Railroads, What are wayside detectors?","href":"https://www.aar.org/wayside-detectors/"},{"id":"pf","label":"Reliable Media, What is a P-F curve?","href":"https://reliamag.com/topics/articles/what-is-a-p-f-curve"},{"id":"rw","label":"Reliabilityweb, RCM: on-condition task interval determination","href":"https://reliabilityweb.com/articles/entry/rcm-on-condition-task-interval-determination"},{"id":"jtsb","label":"Japan Transport Safety Board, Railway serious incident investigation report RI2019-1: the bogie crack on Nozomi 34","href":"https://jtsb.mlit.go.jp/eng-rail_report/English/RI2019-1-1e.pdf"},{"id":"ntsb","label":"NTSB, Railroad investigation report RIR-24-05: Norfolk Southern derailment, East Palestine, Ohio","href":"https://www.ntsb.gov/investigations/AccidentReports/Reports/RIR2405%20CORRECTED.pdf"},{"id":"w-es","label":"Wikipedia, Eschede train disaster","href":"https://en.wikipedia.org/wiki/Eschede_train_disaster"},{"id":"w-rcm","label":"Wikipedia, Reliability-centered maintenance","href":"https://en.wikipedia.org/wiki/Reliability-centered_maintenance"},{"id":"w-prog","label":"Wikipedia, Prognostics","href":"https://en.wikipedia.org/wiki/Prognostics"},{"id":"hitachi","label":"Hitachi Rail, Hitachi Rail boosts maintenance offer as it completes acquisition of Perpetuum (2021)","href":"https://news.hitachirail.com/hitachi-rail-boosts-maintenance-offer-as-it-completes-acquisition-of-digital-tech-firm-perpetuum-3086892"},{"id":"cd17","label":"China Daily, on the launch of the Fuxing trains (June 2017)","href":"https://global.chinadaily.com.cn/a/201706/27/WS59bbf452a310ded8ac18f693.html"},{"id":"cd22","label":"China Daily, Bullet train service for Olympics makes debut trip (2022)","href":"https://www.chinadaily.com.cn/a/202201/07/WS61d799a9a310cdd39bc7facd.html"},{"id":"xinhua","label":"Xinhua, High-tech inspections bolster high-speed rail safety amid Spring Festival rush (2025)","href":"https://ydyl.gansu.gov.cn/enggsydyl/news/topnews/202502/t20250207_25086.html"},{"id":"cgtn","label":"CGTN, How robots diagnose high-speed trains during the Spring Festival rush (2026)","href":"https://news.cgtn.com/news/2026-02-13/How-robots-diagnose-high-speed-trains-during-Spring-Festival-rush-1KIVyl4SDjq/p.html"},{"id":"w-dy","label":"Wikipedia, Doctor Yellow","href":"https://en.wikipedia.org/wiki/Doctor_Yellow"},{"id":"w-sk","label":"Wikipedia, Shinkansen","href":"https://en.wikipedia.org/wiki/Shinkansen"},{"id":"w-tk","label":"Wikipedia, Tōkaidō Shinkansen","href":"https://en.wikipedia.org/wiki/T%C5%8Dkaid%C5%8D_Shinkansen"},{"id":"w-se","label":"Wikipedia, LGV Sud-Est","href":"https://en.wikipedia.org/wiki/LGV_Sud-Est"},{"id":"w-kf","label":"Wikipedia, Cologne–Frankfurt high-speed rail line","href":"https://en.wikipedia.org/wiki/Cologne%E2%80%93Frankfurt_high-speed_rail_line"},{"id":"w-mb","label":"Wikipedia, Madrid–Barcelona high-speed rail line","href":"https://en.wikipedia.org/wiki/Madrid%E2%80%93Barcelona_high-speed_rail_line"},{"id":"w-bs","label":"Wikipedia, Beijing–Shanghai high-speed railway","href":"https://en.wikipedia.org/wiki/Beijing%E2%80%93Shanghai_high-speed_railway"},{"id":"w-tw","label":"Wikipedia, Taiwan High Speed Rail","href":"https://en.wikipedia.org/wiki/Taiwan_High_Speed_Rail"},{"id":"w-gb","label":"Wikipedia, Gyeongbu high-speed railway","href":"https://en.wikipedia.org/wiki/Gyeongbu_high-speed_railway"},{"id":"w-kt","label":"Wikipedia, Kenitra–Tangier high-speed rail line","href":"https://en.wikipedia.org/wiki/Kenitra%E2%80%93Tangier_high-speed_rail_line"},{"id":"w-hr","label":"Wikipedia, Haramain High-Speed Railway","href":"https://en.wikipedia.org/wiki/Haramain_High-Speed_Railway"},{"id":"w-jb","label":"Wikipedia, Jakarta–Bandung high-speed railway","href":"https://en.wikipedia.org/wiki/Jakarta%E2%80%93Bandung_high-speed_railway"}],"back":"Back to the service"}</script>
+  </body>
+</html>
